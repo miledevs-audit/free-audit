@@ -544,6 +544,49 @@ footer{background:#fff;border-top:1px solid var(--grey);padding:34px 0 26px;colo
 .arrow{box-shadow:none}
 .form input:focus{box-shadow:0 0 0 2px var(--indigo)}
 .form .fine a{color:var(--indigo)}
+
+/* mobile pass 05.10 */
+@media (max-width:640px){
+  section{padding-block:44px}
+  .title{margin-bottom:24px}
+  .who .g2{grid-template-columns:minmax(0,1fr)!important;width:100%;gap:12px}
+  .who .card{box-sizing:border-box;width:100%;min-width:0;max-width:100%;padding:20px 20px}
+  .who .card h3{font-size:17px}
+  .who .dots,.hero .dots{display:none}
+  .card.center{gap:14px}
+  /* hero visual: compact */
+  .hero{padding-block:24px 36px}
+  .hero-grid{gap:20px}
+  .phones{height:330px!important;max-width:343px!important;margin:8px auto 0}
+  .ph{width:150px!important}
+  .ph.a{left:4px!important;top:14px!important;transform:rotate(-5deg)}
+  .rescard{width:206px!important;right:0!important;left:auto!important;top:96px!important;padding:9px!important;transform:rotate(2deg)}
+  .rescard .lbl{font-size:9.5px;padding:4px 9px}
+  .hero .rescard .rc-cap{display:none}
+  .rc-n{font-size:16px!important}
+  .rc-leg{font-size:8px!important}
+  .risk{gap:6px 14px}
+  /* example: phones side by side */
+  #what .demo{padding:12px}
+  #what .demo-phones{flex-direction:row!important;gap:8px!important;padding:18px 8px 14px!important;align-items:flex-start}
+  #what .demo-phones .nowgrp .phone,#what .demo-phones>.pcol .phone{width:138px!important;max-width:138px!important}
+  #what .demo-phones .arrow{transform:none;width:26px;height:26px;flex:0 0 26px;font-size:13px;align-self:center;margin-top:-30px}
+  #what .pcol{gap:8px}
+  #what .pcol .cap{font-size:12px;max-width:138px;line-height:1.35}
+  .demo-txt h3{font-size:19px}
+  .fkpi{gap:8px}
+  .fkpi>div{padding:10px 12px}
+  .fkpi b{font-size:15px}
+  .demo-more .btn{width:100%}
+  .steps .step{padding:16px 18px}
+  .order h2{font-size:26px}
+  .faq3{gap:10px}
+  footer{padding-bottom:90px}
+}
+@media (max-width:360px){
+  #what .demo-phones .nowgrp .phone,#what .demo-phones>.pcol .phone{width:124px!important;max-width:124px!important}
+  .ph{width:136px!important}.rescard{width:190px!important}
+}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
