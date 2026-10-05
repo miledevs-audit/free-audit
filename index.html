@@ -439,28 +439,12 @@ footer{background:#fff;border-top:1px solid var(--grey);padding:34px 0 26px;colo
 .risk{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;font-weight:600;color:var(--text)}
 .risk li{position:relative;padding-left:22px}
 .risk li:before{content:"✓";position:absolute;left:0;top:0;color:#1C7A3E;font-weight:800}
-.calc{padding-block:clamp(56px,7vw,90px);background:var(--grey-bg)}
-.calc-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;background:#fff;border-radius:24px;box-shadow:var(--shadow-2);padding:clamp(20px,3vw,36px);max-width:1040px;margin:0 auto}
-.calc-in{display:grid;gap:8px;align-content:start}
-.calc-in label{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:8px}
-.calc-in input,.calc-in select{font:600 18px var(--f);padding:13px 16px;border:0;border-radius:12px;background:var(--input);color:var(--text);width:100%;min-width:0}
-.calc-in input:focus,.calc-in select:focus{outline:2px solid var(--yellow);background:#fff}
-.cur-row{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:8px}
-.calc-now{margin-top:14px;font-size:15px;color:var(--body)}
-.calc-out{display:grid;gap:12px;align-content:start}
-.sc{border:1px solid var(--grey);border-radius:16px;padding:14px 18px;display:grid;gap:2px}
-.sc.on{border-color:var(--yellow);background:var(--yellow-pale)}
-.sc-l{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.sc-v{font-size:clamp(24px,3vw,32px);color:var(--yellow);font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums}
-.sc-o{font-size:14px;color:var(--body);font-variant-numeric:tabular-nums}
-.calc-note{font-size:13px;color:var(--muted)}
-.calc-out .btn{justify-self:start}
 .faq3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:24px auto 0;text-align:left}
 .faq3 div{background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px}
 .faq3 b{color:#fff;font-size:14.5px;display:block;margin-bottom:4px}
 .faq3 p{color:rgba(255,255,255,.82);font-size:13.5px;line-height:1.5;margin:0}
-@media (max-width:900px){.calc-box{grid-template-columns:minmax(0,1fr)}.faq3{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:640px){.calc-out .btn{justify-self:stretch}.risk{font-size:13.5px}}
+@media (max-width:900px){.faq3{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.risk{font-size:13.5px}}
 .rescard{position:absolute;left:250px;top:250px;width:340px;background:#fff;border-radius:20px;box-shadow:0 30px 70px rgba(50,50,80,.24);padding:14px;transform:rotate(3deg);z-index:2}
 .rescard .lbl{position:absolute;top:-16px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#E7F6EC;color:#1C7A3E;border:1px solid #CDEBD7;border-radius:20px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;box-shadow:var(--shadow);z-index:3}
 .hero .rescard .rc-cap{font-size:12.5px;line-height:1.45;max-width:none;margin:10px 4px 2px;color:var(--body)}
@@ -592,31 +576,6 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     </div>
     <p class="demo-cap rv">Так виглядає кожна знахідка: реальний екран, макет і користь. У цьому аудиті їх було 7.</p>
     <div class="demo-more rv"><a class="btn orange" href="#order">Хочу такий аудит свого магазину</a></div>
-  </div>
-</section>
-
-<!-- CALC -->
-<section class="calc" id="calc">
-  <div class="wrap">
-    <div class="title"><h2>Скільки дасть ваш магазин з того самого трафіку</h2><p class="sub">Підставте свої цифри з Shopify Analytics і подивіться, що змінює навіть пів відсотка конверсії.</p></div>
-    <div class="calc-box rv">
-      <div class="calc-in">
-        <label for="cVis">Відвідувачів на місяць</label>
-        <input id="cVis" type="number" inputmode="numeric" min="100" step="100" value="10000">
-        <label for="cConv">Конверсія зараз, %</label>
-        <input id="cConv" type="number" inputmode="decimal" min="0.1" max="20" step="0.1" value="1.5">
-        <label for="cCheck">Середній чек</label>
-        <div class="cur-row"><input id="cCheck" type="number" inputmode="numeric" min="1" step="1" value="1500"><select id="cCur" aria-label="Валюта"><option value="грн">грн</option><option value="$">$</option><option value="€">€</option></select></div>
-        <p class="calc-now" id="cNow"></p>
-      </div>
-      <div class="calc-out">
-        <div class="sc" data-up="0.3"><span class="sc-l">+0,3 п.п. конверсії</span><b class="sc-v"></b><span class="sc-o"></span></div>
-        <div class="sc on" data-up="0.5"><span class="sc-l">+0,5 п.п. конверсії</span><b class="sc-v"></b><span class="sc-o"></span></div>
-        <div class="sc" data-up="1"><span class="sc-l">+1 п.п. конверсії</span><b class="sc-v"></b><span class="sc-o"></span></div>
-        <p class="calc-note">Це розрахунок, а не обіцянка. Наскільки реально зросте конверсія саме у вас, покаже аудит.</p>
-        <a class="btn orange" href="#order">Знайти, де губляться ці гроші</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -762,23 +721,6 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 })();
 
 (function(){
-  var v=document.getElementById('cVis');if(!v)return;
-  var c=document.getElementById('cConv'),k=document.getElementById('cCheck'),cur=document.getElementById('cCur'),now=document.getElementById('cNow');
-  var fmt=function(n){return Math.round(n).toLocaleString('uk-UA').replace(/,/g,' ')};
-  var money=function(n){var s=cur.value;return s==='грн'?fmt(n)+' грн':s+fmt(n)};
-  function num(el,d){var x=parseFloat(String(el.value).replace(',','.'));return isFinite(x)&&x>0?x:d}
-  function calc(){
-    var V=num(v,10000),C=num(c,1.5),K=num(k,1500);
-    var o=V*C/100;now.innerHTML='Зараз: <b>'+fmt(o)+'</b> замовлень і <b>'+money(o*K)+'</b> на місяць';
-    document.querySelectorAll('.sc').forEach(function(el){var up=parseFloat(el.dataset.up);var add=V*up/100;
-      el.querySelector('.sc-v').textContent='+'+money(add*K)+' / міс';
-      el.querySelector('.sc-o').textContent='+'+fmt(add)+' замовлень на місяць · '+money(add*K*12)+' за рік';});
-    window.__calcSummary=function(){return fmt(V)+' відвідувачів/міс, конверсія '+C+' %, середній чек '+money(K)};
-  }
-  [v,c,k,cur].forEach(function(el){el.addEventListener('input',function(){window.__calcUsed=true;calc()});el.addEventListener('change',calc)});
-  calc();
-})();
-(function(){
   var f=document.getElementById('leadForm'); if(!f) return;
   var ok=document.getElementById('okMsg'), th=document.getElementById('thanks'), tg=document.getElementById('tgNow');
   function track(){
@@ -790,11 +732,10 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     var d=new FormData(f); if(d.get('_honey')) return;
     var name=(d.get('name')||'').trim(), contact=(d.get('contact')||'').trim(), store=(d.get('store')||'').trim();
     if(!name||!contact||!store){ok.textContent='Заповніть імʼя, контакт і адресу сайту.';ok.classList.add('show');return;}
-    var calc=window.__calcUsed?('Цифри з калькулятора: '+window.__calcSummary()):'';
-    var text=['Заявка на безкоштовний CRO-аудит','Імʼя: '+name,'Контакт: '+contact,'Сайт: '+store].concat(calc?[calc]:[]).join('\n');
+    var text=['Заявка на безкоштовний CRO-аудит','Імʼя: '+name,'Контакт: '+contact,'Сайт: '+store].join('\n');
     var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Надсилаємо…';
     var q=new URLSearchParams(location.search),src=['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].filter(function(k){return q.get(k)}).map(function(k){return k+'='+q.get(k)}).join(' & ');
-    var payload={'Імʼя':name,'Контакт':contact,'Сайт':store,'Джерело':src||'прямий захід','Калькулятор':calc||'не заповнював','Сторінка':location.href,_subject:'Нова заявка на безкоштовний CRO-аудит — MileDevs',_template:'table',_captcha:'false'};
+    var payload={'Імʼя':name,'Контакт':contact,'Сайт':store,'Джерело':src||'прямий захід','Сторінка':location.href,_subject:'Нова заявка на безкоштовний CRO-аудит — MileDevs',_template:'table',_captcha:'false'};
     function done(sent){
       tg.href='https://t.me/annserputko?text='+encodeURIComponent(text);
       if(!sent){th.querySelector('h3').textContent='Майже готово';th.querySelector('p').textContent='Не вдалося надіслати форму. Натисніть кнопку нижче — заявка відкриється в Telegram з готовим текстом.';tg.textContent='Надіслати заявку в Telegram';}
