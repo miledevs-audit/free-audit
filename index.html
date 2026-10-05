@@ -436,6 +436,7 @@ footer{background:#fff;border-top:1px solid var(--grey);padding:34px 0 26px;colo
 .order .why{color:rgba(255,255,255,.85);font-size:14px;max-width:560px;margin:22px auto 0}
 .order .why b{color:#fff}
 .mcta{display:none}
+#what .demo-phones .phone{aspect-ratio:9/21}#what .demo-phones .phone::before{padding-top:233.3%}
 .risk{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;font-weight:600;color:var(--text)}
 .risk li{position:relative;padding-left:22px}
 .risk li:before{content:"✓";position:absolute;left:0;top:0;color:#1C7A3E;font-weight:800}
@@ -555,26 +556,26 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 <!-- WHAT IS -->
 <section id="what">
   <div class="wrap">
-    <div class="title"><h2>Як виглядає аудит</h2><p class="sub">Кожна проблема — на реальному екрані вашого сайту, поруч макет, як має бути. Приклад з аудиту ювелірного магазину:</p></div>
+    <div class="title"><h2>Як виглядає аудит</h2><p class="sub">Кожна проблема — на реальному екрані вашого сайту, поруч макет, як має бути. Приклад з аудиту магазину тюнінгу авто:</p></div>
     <div class="demo rv">
       <div class="demo-txt">
-        <div class="fhead"><span class="sev crit">Знахідка 01 · Критично</span><span class="sev done">✓ Уже виправлено</span></div>
-        <h3>Обраний колір не доходить до вікна покупки</h3>
-        <div class="frow"><b>Зараз</b><p>Покупець обирає рожевий на картці, тисне Quick Buy — а у вікні відкривається перший колір зі списку.</p></div>
-        <div class="frow"><b>Пропонуємо</b><p>Передавати обраний колір у вікно покупки: те саме фото, той самий варіант.</p></div>
-        <div class="frow"><b>Користь</b><p>Людина отримує той колір, який обрала, — менше помилкових замовлень і повернень.</p></div>
+        <div class="fhead"><span class="sev imp">Знахідка 08 · Дрібна правка</span></div>
+        <h3>Назва товару двічі виштовхує ціну з першого екрана</h3>
+        <div class="frow"><b>Зараз</b><p>Над фото — «хлібні крихти» з повною назвою у два рядки, під фото — та сама назва великим шрифтом. Ціна опиняється нижче першого екрана телефона.</p></div>
+        <div class="frow"><b>Пропонуємо</b><p>Прибрати крихти тільки на телефоні. Фото, назва й кнопки лишаються як є.</p></div>
+        <div class="frow"><b>Користь</b><p>Покупець бачить ціну одразу, без прокрутки, на кожній сторінці товару.</p></div>
         <div class="fkpi two">
-          <div><b>11 кольорів</b><span>у картці — вікно відкривало перший</span></div>
-          <div><b>0 підказок</b><span>що вибір скинувся</span></div>
+          <div><b>921 → 781 px</b><span>де починається ціна при екрані 844 px</span></div>
+          <div><b>1 зміна</b><span>на всіх сторінках товару</span></div>
         </div>
       </div>
       <div class="demo-phones" aria-hidden="true">
-        <div class="nowgrp"><div class="pcol"><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/rinfit-card-pink.jpg" loading="lazy" alt=""></div><div class="url"><span>rinfit.com</span></div></div></div><span class="cap"><b>1</b> Обрали рожевий на картці</span></div><div class="pcol"><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/rinfit-quickbuy-now.jpg" loading="lazy" alt=""></div><div class="url"><span>rinfit.com</span></div></div></div><span class="cap"><b>2</b> Quick Buy відкрив бежевий</span></div></div>
+        <div class="pcol"><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/cd-title-now.jpg" loading="lazy" alt=""></div><div class="url"><span>carbon-district.com</span></div></div></div><span class="cap">Зараз — назва над і під фото</span></div>
         <div class="arrow">→</div>
-        <div class="pcol"><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/rinfit-quickbuy-new.jpg" loading="lazy" alt=""></div><div class="url"><span>rinfit.com</span></div></div></div><span class="cap on">Пропонуємо — у вікні той самий рожевий</span></div>
+        <div class="pcol"><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/cd-title-new.jpg" loading="lazy" alt=""></div><div class="url"><span>carbon-district.com</span></div></div></div><span class="cap on">Пропонуємо — ціна на першому екрані</span></div>
       </div>
     </div>
-    <p class="demo-cap rv">Так виглядає кожна знахідка: реальний екран, макет і користь. У цьому аудиті їх було 7.</p>
+    <p class="demo-cap rv">Так виглядає кожна знахідка: реальний екран, макет і користь. У цьому аудиті їх було 8.</p>
     <div class="demo-more rv"><a class="btn orange" href="#order">Хочу такий аудит свого магазину</a></div>
   </div>
 </section>
