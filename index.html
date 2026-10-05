@@ -587,6 +587,97 @@ footer{background:#fff;border-top:1px solid var(--grey);padding:34px 0 26px;colo
   #what .demo-phones .nowgrp .phone,#what .demo-phones>.pcol .phone{width:124px!important;max-width:124px!important}
   .ph{width:136px!important}.rescard{width:190px!important}
 }
+
+/* redesign 05.10 (mobile feedback) */
+.demo-txt .fsteps,.demo-txt .fkpi1{grid-column:1/-1}
+.hchip{display:inline-flex;align-items:center;gap:8px;background:#F3F2EF;border-radius:30px;padding:8px 14px;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:18px}
+.hchip b{display:inline-flex;width:20px;height:20px;border-radius:50%;background:var(--indigo);color:#fff;font-size:11px;align-items:center;justify-content:center}
+.hero .lead{font-size:17px;color:var(--body);max-width:520px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px;margin:44px 0 0;border-top:1px solid var(--grey);padding-top:22px}
+.stats div{display:flex;flex-direction:column;gap:2px;padding-inline:18px;border-left:1px solid var(--grey)}
+.stats div:first-child{padding-left:0;border-left:0}
+.stats b{font-size:clamp(20px,2.4vw,28px);font-weight:800;color:var(--text);line-height:1.1}
+.stats span{font-size:13px;color:var(--muted)}
+/* finding */
+.fsteps{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fsteps li{display:flex;gap:12px;align-items:flex-start;background:#F7F7F5;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.45;color:var(--body)}
+.fsteps li>i{flex:0 0 28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;font-size:14px}
+.fsteps b{display:block;color:var(--text);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.fsteps .bad>i{background:#FDE8E8;color:#B42318}.fsteps .fix>i{background:#ECEBF8;color:var(--indigo)}.fsteps .win>i{background:#E7F6EC;color:#1C7A3E}
+.fkpi1{margin-top:12px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border:1px dashed #d6d6dc;border-radius:14px;padding:12px 16px}
+.fkpi1 b{font-size:20px;color:var(--text);white-space:nowrap}.fkpi1 span{font-size:13.5px;color:var(--muted)}
+/* icons */
+.ic{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#ECEBF8;color:var(--indigo);flex:0 0 44px}
+.ic svg{width:22px;height:22px}
+.who .card .ic{margin-bottom:14px}
+.who .card.center .ic{margin:0 auto}
+.checks{display:grid;gap:10px}
+.ci{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--grey)}
+.ci:first-child{border-top:0;padding-top:0}
+.ci b{display:block;color:var(--text);font-size:16px;margin-bottom:2px}.ci span{color:var(--body);font-size:15px;line-height:1.5}
+/* steps animated */
+.steps .tl{position:relative;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.steps .tl:before,.steps .tl:after{content:"";display:block!important;position:absolute;top:22px;left:22px;right:calc(33.33% - 22px);height:2px;width:auto;bottom:auto;transform:none;background:var(--grey)}
+.steps .tl:after{background:var(--indigo);transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.4,0,.2,1)}
+.steps .step{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;position:relative;z-index:1;display:flex;flex-direction:column;gap:16px}
+.steps .step .num{background:#fff!important;color:var(--muted)!important;border:2px solid var(--grey)!important;transition:background .4s,color .4s,border-color .4s,transform .4s}
+.steps .step .box{background:#fff!important;border:1px solid var(--grey)!important;border-radius:16px!important;box-shadow:var(--shadow)!important;padding:20px 22px!important}
+.js .steps .step{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.steps.play .tl:after{transform:scaleX(1)}
+.steps.play .step{opacity:1;transform:none}
+.steps.play .step .num{background:var(--indigo)!important;color:#fff!important;border-color:var(--indigo)!important;transform:scale(1.08)}
+.steps.play .step:nth-child(1),.steps.play .step:nth-child(1) .num{transition-delay:.1s}
+.steps.play .step:nth-child(2),.steps.play .step:nth-child(2) .num{transition-delay:.7s}
+.steps.play .step:nth-child(3),.steps.play .step:nth-child(3) .num{transition-delay:1.3s}
+/* faq */
+.faq{background:#F7F7F5}
+.qa{max-width:780px;margin:0 auto;display:grid;gap:10px}
+.qa details{background:#fff;border:1px solid var(--grey);border-radius:16px;padding:0 20px}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:700;font-size:16.5px;color:var(--text)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:after{content:"+";flex:0 0 30px;height:30px;border-radius:50%;background:#F3F2EF;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;transition:transform .25s}
+.qa details[open] summary:after{transform:rotate(45deg)}
+.qa details p{margin:0 0 18px;color:var(--body);font-size:15.5px;line-height:1.55}
+.qa summary:focus-visible{outline:2px solid var(--indigo);outline-offset:4px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){.js .steps .step{opacity:1;transform:none}.steps .tl:after{transition:none;transform:scaleX(1)}}
+@media (max-width:900px){
+  .fsteps{grid-template-columns:minmax(0,1fr)}
+  .steps .tl{grid-template-columns:minmax(0,1fr)!important;gap:18px}
+  .steps .tl:before,.steps .tl:after{top:22px;bottom:22px;left:21px;right:auto;width:2px;height:auto}
+  .steps .tl:after{transform:scaleY(0);transform-origin:top}
+  .steps.play .tl:after{transform:scaleY(1)}
+  .steps .step{flex-direction:row!important;align-items:flex-start;gap:14px}
+  .steps .step .num{flex:0 0 44px}
+  .steps .step .box{flex:1}
+}
+@media (max-width:640px){
+  .hero{padding-block:20px 32px}
+  .hero-grid>div:first-child{display:contents}
+  .hero-grid{display:flex!important;flex-direction:column;gap:0!important;margin-top:0}
+  .hchip{order:0;align-self:flex-start;font-size:12.5px;padding:7px 12px;margin-bottom:14px}
+  .hero h1{order:1;font-size:30px;line-height:1.12}
+  .hero .phones{order:2;height:250px!important;margin:16px 0 4px!important;max-width:none!important}
+  .hero .lead{order:3;font-size:16px;margin-top:6px}
+  .hero .cta{order:4;margin-top:20px;flex-direction:column;align-items:stretch;gap:6px}
+  .hero .cta .btn.orange{width:100%}
+  .hero .cta .btn.yellow{width:auto;background:none!important;border:0!important;padding:10px;text-decoration:underline;text-underline-offset:4px;font-weight:600}
+  .ph{width:118px!important}
+  .ph.a{left:6px!important;top:20px!important}
+  .ph .lbl{font-size:9px!important;padding:4px 8px!important}
+  .rescard{width:196px!important;top:40px!important;right:4px!important}
+  .stats{margin-top:26px;padding-top:16px}
+  .stats div{padding-inline:10px}
+  .stats b{font-size:20px}.stats span{font-size:11.5px;line-height:1.3}
+  .fsteps li{padding:12px 14px;font-size:14.5px}
+  .fkpi1 b{font-size:18px}
+  .who .card{display:grid!important;grid-template-columns:44px minmax(0,1fr);column-gap:14px;align-items:start}
+  .who .card .ic{grid-row:span 2;margin:0}
+  .who .card h3{margin-bottom:4px}
+  .who .card.center{display:flex!important}
+  .who .card.center .ic{display:none}
+  .ci b{font-size:15.5px}.ci span{font-size:14.5px}
+  .qa summary{font-size:15.5px;padding:16px 0}
+}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -617,14 +708,14 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     <div class="dots r"></div>
     <div class="hero-grid">
       <div>
+        <span class="hchip"><b>✓</b> Безкоштовно і без зобовʼязань</span>
         <h1>Безкоштовно знайдемо, де ваш Shopify-магазин втрачає покупців</h1>
-        <p><b>Реклама приводить людей. Магазин їх відпускає.</b> Покажемо на екранах вашого сайту, де саме, і дамо готовий макет, як має бути.</p>
+        <p class="lead"><b>Реклама приводить людей. Магазин їх відпускає.</b> Покажемо, де саме, і дамо макет, як має бути.</p>
         <div class="cta">
           <a class="btn orange" href="#order">Отримати безкоштовний аудит</a>
           <a class="btn yellow" href="https://t.me/annserputko" target="_blank" rel="noopener">Написати в Telegram</a>
         </div>
-        <ul class="risk"><li>Без оплати</li><li>Без доступів до адмінки</li><li>Без зобовʼязань</li></ul>
-        <p class="proof"><i><b>Shopify Selected Partner</b></i><span>·</span><i><b>300+</b> проєктів</i><span>·</span><i><b>7+</b> років у Shopify</i></p>
+        
       </div>
 
       <div class="phones rv" aria-hidden="true">
@@ -633,6 +724,11 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
           <div class="rc-in"><span class="rc-l">Total sales over time</span><div class="rc-n">$168,636.34<em>↗ 19%</em></div><img src="img/results-chart.png" alt=""><div class="rc-leg"><span><b></b>May 5–26, 2026</span><span><b class="o"></b>Apr 7–28, 2026</span></div></div>
           <p class="rc-cap">Shopify-магазин клієнта після CRO-змін на сторінках товару й у checkout</p></div>
       </div>
+    </div>
+    <div class="stats">
+      <div><b>300+</b><span>проєктів на Shopify</span></div>
+      <div><b>7+</b><span>років тільки з Shopify</span></div>
+      <div><b>Selected</b><span>Shopify Partner</span></div>
     </div>
   </div>
 </section>
@@ -645,13 +741,12 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
       <div class="demo-txt">
         <div class="fhead"><span class="sev imp">Знахідка 08 · Дрібна правка</span></div>
         <h3>Назва товару двічі виштовхує ціну з першого екрана</h3>
-        <div class="frow"><b>Зараз</b><p>Над фото — «хлібні крихти» з повною назвою у два рядки, під фото — та сама назва великим шрифтом. Ціна опиняється нижче першого екрана телефона.</p></div>
-        <div class="frow"><b>Пропонуємо</b><p>Прибрати крихти тільки на телефоні. Фото, назва й кнопки лишаються як є.</p></div>
-        <div class="frow"><b>Користь</b><p>Покупець бачить ціну одразу, без прокрутки, на кожній сторінці товару.</p></div>
-        <div class="fkpi two">
-          <div><b>921 → 781 px</b><span>де починається ціна при екрані 844 px</span></div>
-          <div><b>1 зміна</b><span>на всіх сторінках товару</span></div>
-        </div>
+        <ul class="fsteps">
+          <li class="bad"><i>✕</i><div><b>Зараз</b>Назва і над фото, і під ним — ціна випадає з першого екрана.</div></li>
+          <li class="fix"><i>✓</i><div><b>Пропонуємо</b>Прибрати дубль над фото на телефоні.</div></li>
+          <li class="win"><i>↑</i><div><b>Результат</b>Ціну видно одразу, без прокрутки.</div></li>
+        </ul>
+        <div class="fkpi1"><b>921 → 781 px</b><span>ціна піднімається на перший екран (екран телефона — 844 px)</span></div>
       </div>
       <div class="demo-phones" aria-hidden="true">
         <div class="pcol"><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/cd-title-now.jpg" loading="lazy" alt=""></div><div class="url"><span>carbon-district.com</span></div></div></div><span class="cap">Зараз — назва над і під фото</span></div>
@@ -671,18 +766,22 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     <div class="title"><h2>Кому підійде аудит</h2></div>
     <div class="g2">
       <div class="card rv">
+        <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6 6 4-4 8 8"/><path d="M21 11v6h-6"/></svg></i>
         <h3>Магазинам, де трафік є, а продажів мало</h3>
         <p>Відвідувачі приходять, а купують одиниці. Знайдемо, що їх зупиняє.</p>
       </div>
       <div class="card rv">
+        <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></i>
         <h3>Магазинам перед масштабуванням</h3>
         <p>Перед сезоном чи більшим рекламним бюджетом кожен відсоток конверсії множиться на весь трафік.</p>
       </div>
       <div class="card rv">
+        <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/></svg></i>
         <h3>Магазинам, що переїжджають на Shopify</h3>
         <p>Перевіримо поточний сайт, щоб на новому не повторити тих самих помилок.</p>
       </div>
       <div class="card center rv">
+        <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.2a2.5 2.5 0 1 1 3.4 2.4c-.7.3-1 .8-1 1.6"/><path d="M12 16.8h.01"/></svg></i>
         <h3>Не впевнені, що справа в сайті? Надішліть адресу — скажемо чесно.</h3>
         <a class="btn orange" href="#order">Отримати безкоштовний аудит</a>
       </div>
@@ -696,11 +795,11 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     <div class="title"><h2>Що входить в аудит</h2></div>
     <div class="inc2">
       <div class="checks rv">
-        <p><b>Шлях покупця з телефона й компʼютера:</b> головна, каталог, картка товару, кошик, оформлення.</p>
-        <p><b>Швидкість:</b> вимірюємо, як сайт завантажується на телефоні (Core Web Vitals).</p>
-        <p><b>Довіра й офер:</b> ціни, знижки, доставка, відгуки, тексти, кнопки.</p>
-        <p><b>Конкуренти:</b> як ту саму задачу вирішують 10 магазинів вашої ніші.</p>
-        <p><b>Технічні дрібниці:</b> биті посилання, порожні блоки, помилки теми.</p>
+        <div class="ci"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></i><div><b>Шлях покупця</b><span>головна, каталог, картка товару, кошик, оформлення — з телефона й компʼютера.</span></div></div>
+        <div class="ci"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 14l4.5-4.5"/></svg></i><div><b>Швидкість</b><span>як сайт завантажується на телефоні (Core Web Vitals).</span></div></div>
+        <div class="ci"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></i><div><b>Довіра й офер</b><span>ціни, знижки, доставка, відгуки, тексти, кнопки.</span></div></div>
+        <div class="ci"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.3c2.6.5 4.5 2.8 4.5 5.7"/></svg></i><div><b>Конкуренти</b><span>як ту саму задачу вирішують 10 магазинів вашої ніші.</span></div></div>
+        <div class="ci"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></i><div><b>Технічні дрібниці</b><span>биті посилання, порожні блоки, помилки теми.</span></div></div>
       </div>
       <div class="getbox rv">
         <b class="gb-t">Ви отримуєте</b>
@@ -728,6 +827,18 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="title"><h2>Часті запитання</h2></div>
+    <div class="qa">
+      <details open><summary>Чому безкоштовно?</summary><p>Частина магазинів після аудиту доручає впровадження нам. Решта отримує готовий план для свого розробника.</p></details>
+      <details><summary>Потрібні доступи до Shopify?</summary><p>Ні. Проходимо сайт як покупець — з телефона й компʼютера.</p></details>
+      <details><summary>Що буде після аудиту?</summary><p>Ви отримуєте звіт і самі вирішуєте: впроваджувати з нами, зі своїм розробником чи не впроваджувати.</p></details>
+    </div>
+  </div>
+</section>
+
 <!-- ORDER -->
 <section class="order" id="order">
   <div class="wrap">
@@ -751,11 +862,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
         <p>Напишемо вам протягом години в робочий час.</p>
         <a class="btn yellow" id="tgNow" href="https://t.me/annserputko" target="_blank" rel="noopener">Написати в Telegram зараз</a>
       </div>
-      <div class="faq3">
-        <div><b>Чому безкоштовно?</b><p>Частина магазинів після аудиту доручає впровадження нам. Решта отримує готовий план для свого розробника.</p></div>
-        <div><b>Потрібні доступи до Shopify?</b><p>Ні. Проходимо сайт як покупець — з телефона й компʼютера.</p></div>
-        <div><b>Що буде після аудиту?</b><p>Ви отримуєте звіт і самі вирішуєте: впроваджувати з нами, зі своїм розробником чи не впроваджувати.</p></div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -804,6 +911,13 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   els.forEach(function(e){io.observe(e)});
 })();
 
+
+(function(){
+  document.documentElement.classList.add('js');
+  var s=document.getElementById('steps');if(!s)return;
+  if(!('IntersectionObserver' in window)){s.classList.add('play');return}
+  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('play');io.disconnect()}},{threshold:.35});io.observe(s);
+})();
 (function(){
   var f=document.getElementById('leadForm'); if(!f) return;
   var ok=document.getElementById('okMsg'), th=document.getElementById('thanks'), tg=document.getElementById('tgNow');
