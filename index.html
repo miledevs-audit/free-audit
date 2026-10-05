@@ -717,6 +717,15 @@ footer{background:#fff;border-top:1px solid var(--grey);padding:34px 0 26px;colo
   .mr-res img{width:112px;height:52px;object-fit:cover;object-position:center 40%;display:block}
 }
 @media (max-width:640px){.mr-res{margin-top:0!important;padding-top:0!important;border-top:0!important}}
+@media (max-width:640px){
+  .mrep{background:linear-gradient(160deg,#ECEBF8 0%,#F3F2EF 100%)!important;border:0!important;box-shadow:none!important;border-radius:22px!important;padding:16px 14px 12px!important}
+  .mr-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+  .mr-top .mr-k{font-size:10.5px;line-height:1.3;max-width:150px}
+  .mr-badge{flex:0 0 auto;background:#15161B;color:#fff;border-radius:30px;padding:7px 12px;font-size:13px;font-weight:800;white-space:nowrap}
+  .mr-shot{background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(30,30,60,.12);overflow:hidden;padding:6px}
+  .mr-shot img{display:block;width:100%;height:auto}
+  .mr-cap{margin:8px 2px 0!important;font-size:11.5px!important;color:var(--muted)!important}
+}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -760,7 +769,9 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
       <div class="phones rv" aria-hidden="true">
         <div class="ph a"><span class="lbl on">Ваш звіт</span><div class="phone"><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111"/><rect x="2" y="2" width="16" height="7" rx="1.5" fill="#111"/><rect x="21.5" y="3.5" width="1.8" height="4" rx=".9" fill="#111"/></svg></div><div class="view"><img class="shot" src="img/hero-report.jpg" alt="Приклад звіту аудиту" alt=""></div><div class="url"><span>miledevs · аудит</span></div></div></div></div>
         <div class="mrep" aria-hidden="true">
-          <div class="mr-res"><div><span class="mr-k">Результат клієнта</span><b>$168 636 <em>↗ +19 %</em></b><small>продажі за 3 тижні після CRO-змін</small></div><img src="img/results-chart.png" alt=""></div>
+          <div class="mr-top"><span class="mr-k">Результат клієнта після CRO-змін</span><span class="mr-badge">↗ +19 % продажів</span></div>
+          <div class="mr-shot"><img src="img/results.png" alt=""></div>
+          <p class="mr-cap">Shopify Analytics · травень vs квітень 2026</p>
         </div>
         <div class="rescard"><span class="lbl">Результат клієнта</span>
           <div class="rc-in"><span class="rc-l">Total sales over time</span><div class="rc-n">$168,636.34<em>↗ 19%</em></div><img src="img/results-chart.png" alt=""><div class="rc-leg"><span><b></b>May 5–26, 2026</span><span><b class="o"></b>Apr 7–28, 2026</span></div></div>
