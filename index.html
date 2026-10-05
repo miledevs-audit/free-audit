@@ -21,7 +21,7 @@
 :root{
   --yellow:#1800ad;--yellow-soft:#1800ad;--yellow-light:#E9E6FF;--yellow-pale:#F1EFFF;--blue-2:#2B17D9;--blue-tint:#8F82FF;
   --orange:#F56400;--orange2:#FF7D23;
-  --text:#23282d;--body:#4a4a4a;--muted:#7b7b7b;--grey:#E6E6E6;--grey-bg:#F5F5F7;--input:#EFEFEF;
+  --text:#23282d;--body:#4a4a4a;--muted:#5f6268;--grey:#E6E6E6;--grey-bg:#F5F5F7;--input:#EFEFEF;
   --footer:#3D3D3D;--white:#fff;
   --shadow:0 15px 60px 0 rgba(138,141,160,.15);--shadow-2:0 15px 60px 0 rgba(138,141,160,.25);
   --r:20px;--f:"Montserrat",Arial,sans-serif;
@@ -498,6 +498,38 @@ footer{background:#fff;border-top:1px solid var(--grey);padding:34px 0 26px;colo
   .mcta.show{transform:none;opacity:1;pointer-events:auto}
   footer{padding-bottom:84px}
 }
+
+/* design pass 05.10 */
+.proof i{font-style:normal;white-space:nowrap}
+.steps .step{background:#fff;border:1px solid var(--grey);border-radius:16px;box-shadow:var(--shadow);padding:22px 24px}
+.steps .step .box{background:none;border:0;box-shadow:none;padding:0}
+@media (max-width:900px){.steps .step{gap:16px}}
+
+.hero .cta{flex-wrap:nowrap;gap:12px}
+.hero .cta .btn{min-width:0;padding:17px 24px}
+.risk{margin-top:20px}
+.proof{margin-top:14px!important;font-size:14px!important;color:var(--muted)!important;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.proof b{color:var(--text);font-weight:700}
+.proof span{color:#c2c4ca}
+#what .demo-phones .nowgrp .phone,#what .demo-phones>.pcol .phone{width:240px;max-width:240px}
+#what .demo-phones{gap:28px;padding:34px 20px 26px}
+#what .demo-phones .arrow{width:48px;height:48px;flex-basis:48px}
+.pcol .cap{max-width:240px;font-size:14px}
+.steps .tl{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1100px}
+.steps .tl:before{display:none}
+.steps .step{display:flex;flex-direction:column;gap:14px;align-items:stretch}
+.steps .step .num,.steps .step .box{grid-column:auto!important;grid-row:auto!important}
+.steps .step .num{justify-self:auto;align-self:flex-start;width:44px;height:44px;margin:0!important;background:var(--yellow);border-color:var(--yellow);color:#fff;font-size:16px;font-weight:700}
+.steps .step .box{flex:1}
+@media (max-width:1200px){#what .demo-phones .nowgrp .phone,#what .demo-phones>.pcol .phone{width:210px;max-width:210px}}
+@media (max-width:900px){.steps .tl{grid-template-columns:minmax(0,1fr)}.steps .step{flex-direction:row;align-items:flex-start}.steps .step .num{flex:0 0 44px}}
+@media (max-width:640px){
+  .hero .cta{flex-wrap:wrap}
+  .hero .cta .btn{width:100%}
+  #what .demo-phones .nowgrp .phone,#what .demo-phones>.pcol .phone{width:220px;max-width:220px}
+  .pcol .cap{max-width:220px}
+  .f-nav{justify-content:center;gap:10px 18px}
+}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -524,7 +556,6 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="wave l" aria-hidden="true"><svg viewBox="0 0 340 1500" preserveAspectRatio="none"><path d="M0 0 C 170 0, 340 120, 322 330 C 305 540, 120 580, 104 780 C 90 980, 215 1020, 200 1230 C 186 1420, 60 1455, 0 1500 Z"/></svg></div>
   <div class="wrap">
     <div class="dots r"></div>
     <div class="hero-grid">
@@ -536,11 +567,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
           <a class="btn yellow" href="https://t.me/annserputko" target="_blank" rel="noopener">Написати в Telegram</a>
         </div>
         <ul class="risk"><li>Без оплати</li><li>Без доступів до адмінки</li><li>Без зобовʼязань</li></ul>
-        <div class="trust">
-          <span class="pillbox">Shopify Selected Partner</span>
-          <span class="pillbox">300+ <small>проєктів</small></span>
-          <span class="pillbox">7+ <small>років у Shopify</small></span>
-        </div>
+        <p class="proof"><i><b>Shopify Selected Partner</b></i><span>·</span><i><b>300+</b> проєктів</i><span>·</span><i><b>7+</b> років у Shopify</i></p>
       </div>
 
       <div class="phones rv" aria-hidden="true">
@@ -608,7 +635,6 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 
 <!-- INCLUDED -->
 <section class="inc" id="included">
-  <div class="wave r" aria-hidden="true"><svg viewBox="0 0 300 1300" preserveAspectRatio="none"><path d="M300 0 C 200 20, 70 160, 80 400 C 90 620, 230 660, 218 840 C 206 1020, 110 1060, 130 1180 C 150 1260, 240 1280, 300 1300 Z"/></svg></div>
   <div class="wrap">
     <div class="title"><h2>Що входить в аудит</h2></div>
     <div class="inc2">
