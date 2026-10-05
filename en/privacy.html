@@ -26,21 +26,21 @@ img{display:block;max-width:100%;height:auto}
 .wrap{width:100%;max-width:820px;margin-inline:auto;padding-inline:20px}
 .hdr{position:sticky;top:0;z-index:10;background:rgba(6,10,20,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none}
 .logo img{height:21px;width:auto;filter:invert(1)}
 .logo b{font-weight:800;font-size:14px;letter-spacing:.16em;color:#fff}
-.lsw{display:flex;align-items:center;height:40px;padding:3px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
-.lsw a{display:grid;place-items:center;min-width:32px;height:32px;padding:0 6px;border-radius:999px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.72);text-decoration:none}
+.lsw{display:flex;align-items:center;height:44px;padding:0;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+.lsw a{display:grid;place-items:center;min-width:44px;height:44px;padding:0 6px;border-radius:999px;font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.72);text-decoration:none}
 .lsw a.on{background:#fff;color:var(--ink)}
 .top{padding:44px 0 34px;background:var(--ink);color:#fff;background-image:radial-gradient(70% 90% at 100% 0%,rgba(111,136,174,.34),transparent 70%)}
-.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#A9BCDC;text-decoration:none}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px;font-weight:700;color:#A9BCDC;text-decoration:none}
 .back svg{width:16px;height:16px}
-h1{margin:18px 0 10px;color:#fff;font-size:clamp(30px,7.6vw,46px);line-height:1.1;letter-spacing:-.03em;font-weight:800}
+h1{margin:10px 0 10px;text-wrap:balance;color:#fff;font-size:clamp(30px,7.6vw,46px);line-height:1.1;letter-spacing:-.03em;font-weight:800}
 .upd{font-size:14px;color:#8B97AC}
 main{padding:36px 0 56px}
 .intro{margin:0 0 26px;font-size:17px;color:var(--text)}
 section{padding:24px 0;border-top:1px solid var(--line)}
-h2{margin:0 0 10px;color:var(--text);font-size:20px;line-height:1.3;letter-spacing:-.015em;font-weight:800}
+h2{margin:0 0 10px;color:var(--text);font-size:20px;text-wrap:balance;line-height:1.3;letter-spacing:-.015em;font-weight:800}
 p{margin:0 0 10px}
 ul{margin:0 0 10px;padding-left:20px}
 li{margin:0 0 6px}
@@ -50,7 +50,8 @@ b{color:var(--text);font-weight:700}
 main a{color:var(--accent);font-weight:700;text-underline-offset:3px}
 .ft{padding:30px 0 34px;background:var(--ink);color:rgba(255,255,255,.6);font-size:14px}
 .ft-in{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
-.ft a{color:rgba(255,255,255,.85);text-decoration:none}
+.ft a{display:inline-flex;align-items:center;min-height:44px;color:rgba(255,255,255,.85);text-decoration:none}
+@media (max-width:374px){.wrap{padding-inline:16px}.logo b{display:none}}
 @media (min-width:900px){.wrap{padding-inline:32px}.top{padding:72px 0 50px}main{padding:56px 0 80px}h2{font-size:22px}}
 </style>
 </head>
@@ -60,38 +61,38 @@ main a{color:var(--accent);font-weight:700;text-underline-offset:3px}
   <nav class="lsw" aria-label="Language"><a href="../privacy.html" hreflang="uk" lang="uk">UK</a><a class="on" href="privacy.html" aria-current="page" lang="en">EN</a></nav>
 </div></header>
 <div class="top"><div class="wrap">
-  <a class="back" href="./"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to the free audit</a>
-  <h1>Privacy Policy</h1>
+  <a class="back" href="./"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to the free audit</a>
+  <h1>Privacy Policy</h1>
   <p class="upd">Last updated: October 5, 2026</p>
 </div></div>
 <main><div class="wrap">
-<p class="intro">This policy covers the “Free CRO &amp; UX audit for your Shopify store” page at miledevs-audit.github.io/free-audit/en/ (the “page”) and its request form. The page is run by MileDevs, a team that builds and optimizes Shopify stores (<a href="https://www.miledevs.com/" target="_blank" rel="noopener">miledevs.com</a>).</p>
-<section><h2>1. What we collect</h2>
-<p>Only what you type into the request form:</p>
-<ul><li>your name;</li><li>your phone number and/or your Telegram or WhatsApp handle;</li><li>your store’s URL;</li><li>the budget range you pick from the list.</li></ul>
-<p>Each request also includes the address of the page it was sent from, any campaign tags in the link (utm, fbclid), and which button opened the form. That tells us where the request came from.</p>
-<p>This page uses no cookies, no analytics and no ad pixels.</p></section>
-<section><h2>2. Why we collect it</h2>
-<ul><li>to get back to you about your free audit, using the contact method you gave us;</li><li>to run the audit: we only look at the public pages of your store, the way a shopper would. We never need access to your Shopify admin;</li><li>to send you the report and, if you want, talk through implementation.</li></ul>
-<p>We don’t sell your data, and we don’t add you to any mailing list without your consent.</p></section>
-<section><h2>3. Where your data goes</h2>
-<ul><li><b>The form.</b> Requests are sent through FormSubmit (formsubmit.co), which forwards them by email to the MileDevs team inbox. That’s where they are stored.</li>
-<li><b>Telegram.</b> If you tap “Message us on Telegram”, your message is sent through Telegram and Telegram’s terms apply.</li>
-<li><b>Hosting and fonts.</b> The page is hosted on GitHub Pages and loads fonts from Google Fonts. Like any website, these services receive your device’s IP address in order to serve the page.</li></ul></section>
-<section><h2>4. How long we keep it</h2>
-<p>We keep requests for up to 24 months after our last contact with you, or less if you ask us to delete them.</p></section>
-<section><h2>5. Your rights</h2>
-<p>At any time, you can ask us to:</p>
-<ul><li>tell you what data we hold about you;</li><li>correct it;</li><li>delete it;</li><li>stop contacting you, withdrawing your consent.</li></ul>
-<p>Just write to us using the details below. We’ll reply within 30 days, usually much sooner.</p></section>
-<section><h2>6. Children</h2>
-<p>This page is meant for store owners and their teams. We don’t knowingly collect data from anyone under 16.</p></section>
-<section><h2>7. Changes</h2>
-<p>If we change what we collect (for example, by adding analytics), we’ll update this policy and the date at the top.</p></section>
-<section><h2>8. Contact</h2>
+<p class="intro">This policy covers the “Free CRO &amp; UX audit for your Shopify store” page at miledevs-audit.github.io/free-audit/en/ (the “page”) and its request form. The page is run by MileDevs, a team that builds and optimizes Shopify stores (<a href="https://www.miledevs.com/" target="_blank" rel="noopener">miledevs.com</a>).</p>
+<section><h2>1. What we collect</h2>
+<p>Only what you type into the request form:</p>
+<ul><li>your name;</li><li>your phone number and/or your Telegram or WhatsApp handle;</li><li>your store’s URL;</li><li>the budget range you pick from the list.</li></ul>
+<p>Each request also includes the address of the page it was sent from, any campaign tags in the link (utm, fbclid), and which button opened the form. That tells us where the request came from.</p>
+<p>This page uses no cookies, no analytics and no ad pixels.</p></section>
+<section><h2>2. Why we collect it</h2>
+<ul><li>to get back to you about your free audit, using the contact method you gave us;</li><li>to run the audit: we only look at the public pages of your store, the way a shopper would. We never need access to your Shopify admin;</li><li>to send you the report and, if you want, talk through implementation.</li></ul>
+<p>We don’t sell your data, and we don’t add you to any mailing list without your consent.</p></section>
+<section><h2>3. Where your data goes</h2>
+<ul><li><b>The form.</b> Requests are sent through FormSubmit (formsubmit.co), which forwards them by email to the MileDevs team inbox. That’s where they are stored.</li>
+<li><b>Telegram.</b> If you tap “Message us on Telegram”, your message is sent through Telegram and Telegram’s terms apply.</li>
+<li><b>Hosting and fonts.</b> The page is hosted on GitHub Pages and loads fonts from Google Fonts. Like any website, these services receive your device’s IP address in order to serve the page.</li></ul></section>
+<section><h2>4. How long we keep it</h2>
+<p>We keep requests for up to 24 months after our last contact with you, or less if you ask us to delete them.</p></section>
+<section><h2>5. Your rights</h2>
+<p>At any time, you can ask us to:</p>
+<ul><li>tell you what data we hold about you;</li><li>correct it;</li><li>delete it;</li><li>stop contacting you, withdrawing your consent.</li></ul>
+<p>Just write to us using the details below. We’ll reply within 30 days, usually much sooner.</p></section>
+<section><h2>6. Children</h2>
+<p>This page is meant for store owners and their teams. We don’t knowingly collect data from anyone under 16.</p></section>
+<section><h2>7. Changes</h2>
+<p>If we change what we collect (for example, by adding analytics), we’ll update this policy and the date at the top.</p></section>
+<section><h2>8. Contact</h2>
 <p>MileDevs<br>Email: <a href="mailto:miledevelopment@gmail.com">miledevelopment@gmail.com</a><br>Telegram: <a href="https://t.me/annserputko" target="_blank" rel="noopener">@annserputko</a></p>
-<p class="note">The general privacy policy for miledevs.com: <a href="https://www.miledevs.com/pages/privacy-policy" target="_blank" rel="noopener">miledevs.com/pages/privacy-policy</a></p></section>
+<p class="note">The general privacy policy for miledevs.com: <a href="https://www.miledevs.com/pages/privacy-policy" target="_blank" rel="noopener">miledevs.com/pages/privacy-policy</a></p></section>
 </div></main>
-<footer class="ft"><div class="wrap ft-in"><span>© 2026 MileDevs · Shopify Selected Partner</span><a href="./">Back to the free audit</a></div></footer>
+<footer class="ft"><div class="wrap ft-in"><span>© 2026 MileDevs · Shopify Selected Partner</span><a href="./">Back to the free audit</a></div></footer>
 </body>
 </html>
