@@ -798,6 +798,18 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 .fdr-st span{display:block;margin-top:8px;font-size:13px;line-height:1.4;font-weight:600;color:var(--muted)}
 @media (max-width:640px){.fdr-ph{aspect-ratio:1/1}.fdr-ph img{object-position:50% 22%}}
 @media (min-width:900px){.fdr-in{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:56px}.fdr-st div{padding:24px 26px}.fdr-st span{font-size:14px}}
+
+/* === 06.10: cases with numbers === */
+.case-do{margin:2px 0 14px;font-size:14px;line-height:1.5;color:var(--body)}
+.case-do em{font-style:normal;font-weight:800;color:var(--indigo)}
+.case-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:auto;padding-top:14px;border-top:1px solid var(--line-2)}
+.case-stats div{min-width:0;padding-right:10px}
+.case-stats div+div{padding:0 0 0 14px;border-left:1px solid var(--line-2)}
+.case-stats b{display:block;font-size:25px;font-weight:800;line-height:1.1;letter-spacing:-.02em;color:var(--text);white-space:nowrap}
+.case-stats span{display:block;margin-top:5px;font-size:12.5px;line-height:1.35;font-weight:600;color:var(--muted)}
+@media (min-width:900px){.cases{grid-template-columns:repeat(3,minmax(0,1fr))}.case-stats b{font-size:28px}}
+@media (max-width:640px){.case-stats b{font-size:clamp(18px,5.4vw,25px)}.case-stats div+div{padding-left:10px}}
+@media (max-width:374px){.fdr-st b{font-size:24px}.fdr-st div{padding:16px 12px}}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -1048,19 +1060,27 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     <div class="cases">
       <article class="case rv">
         <span class="case-img"><img src="img/case-lunesi.webp" width="720" height="480" loading="lazy" alt="Lunesi — головна сторінка магазину"></span>
-        <div class="case-b"><small>Догляд за волоссям · UK і ЄС</small><b>LUNESI</b><dl class="case-dl"><dt>Зробили</dt><dd>Власна тема з наборами товарів, квізом і списком очікування; ціни у фунтах і євро.</dd><dt>Результат</dt><dd>Магазин продає у 30+ країн з автоматичним розрахунком доставки (Royal Mail, DHL) і ПДВ.</dd></dl></div>
+        <div class="case-b"><small>Догляд за волоссям · UK і ЄС</small><b>LUNESI</b><p class="case-do"><em>Зробили:</em> Розробка дизайну, вітрини для UK і ЄС, квіз і набори товарів.</p><div class="case-stats"><div><b>41</b><span>країна ЄС</span></div><div><b>6</b><span>мов сайту</span></div></div></div>
       </article>
       <article class="case rv">
         <span class="case-img"><img src="img/case-joyfolie.webp" width="720" height="480" loading="lazy" alt="Joyfolie — головна сторінка магазину"></span>
-        <div class="case-b"><small>Жіночий і дитячий одяг · США</small><b>JOYFOLIE</b><dl class="case-dl"><dt>Зробили</dt><dd>Власна тема й сторінки товарів: вітрини колекцій, таблиці розмірів, швидкий перегляд.</dd><dt>Результат</dt><dd>Один каталог для жіночих і дитячих ліній із синхронізацією залишків і доставкою по США через USPS.</dd></dl></div>
+        <div class="case-b"><small>Жіночий і дитячий одяг · США</small><b>JOYFOLIE</b><p class="case-do"><em>Зробили:</em> Розробка дизайну, вітрини жіночої й дитячої ліній, таблиці розмірів.</p><div class="case-stats"><div><b>1 268</b><span>товарів у каталозі</span></div><div><b>2</b><span>лінії в одному магазині</span></div></div></div>
       </article>
       <article class="case rv">
         <span class="case-img"><img src="img/case-rinfit.webp" width="720" height="480" loading="lazy" alt="Rinfit — головна сторінка магазину"></span>
-        <div class="case-b"><small>Силіконові каблучки · США</small><b>RINFIT</b><dl class="case-dl"><dt>Зробили</dt><dd>Перенесли дизайн із Figma на живий сайт до пікселя, прибрали горизонтальний скрол і зсуви верстки.</dd><dt>Результат</dt><dd>Магазин однаково виглядає на всіх пристроях, сторінки вантажаться швидше, є фільтр за розміром і кольором.</dd></dl></div>
+        <div class="case-b"><small>Силіконові каблучки · США</small><b>RINFIT</b><p class="case-do"><em>Зробили:</em> Перенесли дизайн із Figma до пікселя, додали фільтри розміру й кольору.</p><div class="case-stats"><div><b>124</b><span>товари</span></div><div><b>8</b><span>фільтрів</span></div></div></div>
       </article>
       <article class="case rv">
         <span class="case-img"><img src="img/case-carbon.webp" width="720" height="480" loading="lazy" alt="Carbon District — головна сторінка магазину"></span>
-        <div class="case-b"><small>Автозапчастини з карбону</small><b>CARBON</b><dl class="case-dl"><dt>Зробили</dt><dd>Редизайн на власній темі: «Пошук за маркою авто», фільтри, перевірка сумісності деталей.</dd><dt>Результат</dt><dd>Покупець знаходить деталь під свою машину за маркою, моделлю й роком.</dd></dl></div>
+        <div class="case-b"><small>Карбонові автозапчастини</small><b>CARBON DISTRICT</b><p class="case-do"><em>Зробили:</em> Розробка дизайну, пошук деталі за маркою авто, фільтри.</p><div class="case-stats"><div><b>23</b><span>марки авто</span></div><div><b>6 285</b><span>деталей у каталозі</span></div></div></div>
+      </article>
+      <article class="case rv">
+        <span class="case-img"><img src="img/case-neom.webp" width="720" height="480" loading="lazy" alt="Neom Wellbeing — головна сторінка магазину"></span>
+        <div class="case-b"><small>Товари для релаксу · UK</small><b>NEOM WELLBEING</b><p class="case-do"><em>Зробили:</em> Конструктор набору з підпискою: весь набір у кошик одним кліком.</p><div class="case-stats"><div><b>1 клік</b><span>набір у кошику</span></div><div><b>до −20 %</b><span>знижка на набір</span></div></div></div>
+      </article>
+      <article class="case rv">
+        <span class="case-img"><img src="img/case-fugazzi.webp" width="720" height="480" loading="lazy" alt="Fugazzi — головна сторінка магазину"></span>
+        <div class="case-b"><small>Нішеві парфуми</small><b>FUGAZZI</b><p class="case-do"><em>Зробили:</em> Дизайн і розробка магазину, конструктор набору пробників.</p><div class="case-stats"><div><b>37</b><span>країн</span></div><div><b>6 × 2 мл</b><span>набір пробників</span></div></div></div>
       </article>
     </div>
   </div>
