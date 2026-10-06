@@ -881,6 +881,54 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 .pf-tabs button{flex:none;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:transparent;color:rgba(255,255,255,.75);font:700 13.5px/1 var(--f);cursor:pointer}
 .pf-tabs button[aria-selected="true"]{background:#fff;border-color:#fff;color:var(--ink)}
 .pf-tabs+.pf-cmp{margin-top:16px}
+
+/* === 06.10 (9): cases like AXY — dark, tabs, image + glass result badge, Learn more → modal === */
+.cx{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:60px 0 56px}
+.cx::before{content:"";position:absolute;left:-20%;top:-10%;width:80%;height:60%;background:radial-gradient(closest-side,rgba(76,101,144,.35),transparent);pointer-events:none}
+.cx .wrap{position:relative}
+.cx-head{text-align:center;max-width:640px;margin:0 auto}
+.cx-head .eyebrow{color:var(--lav-3);justify-content:center}
+.cx-head h2{margin-top:10px;color:#fff;font-size:clamp(28px,7vw,46px)}
+.cx-head p{margin-top:12px;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.62)}
+.cx-tabs{display:flex;max-width:440px;margin:26px auto 0;padding:5px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.cx-tabs button{flex:1;min-height:44px;padding:0 10px;border:0;border-radius:10px;background:transparent;color:rgba(255,255,255,.7);font:700 13.5px/1.2 var(--f);cursor:pointer;transition:background-color .2s,color .2s}
+.cx-tabs button[aria-selected="true"]{background:rgba(141,164,200,.18);color:#fff}
+.cx-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:24px}
+.cx-card{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.cx-card[hidden]{display:none}
+.cx-img{position:relative;display:block;aspect-ratio:3/2;overflow:hidden}
+.cx-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s var(--ease)}
+.cx-card:hover .cx-img img{transform:scale(1.05)}
+.cx-img::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);pointer-events:none}
+.cx-badge{position:absolute;top:14px;right:14px;z-index:1;padding:8px 14px;border-radius:10px;background:rgba(141,164,200,.18);border:1px solid rgba(169,188,220,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;font-size:13.5px;font-weight:700;line-height:1.2}
+.cx-body{display:flex;flex-direction:column;flex:1;padding:20px 20px 20px}
+.cx-body h3{color:#fff;font-size:19px;line-height:1.3}
+.cx-body p{margin-top:8px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.62)}
+.cx-more{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:46px;margin-top:auto;padding:0 16px;border:0;border-radius:12px;background:var(--indigo);color:#fff;font:700 14.5px/1 var(--f);cursor:pointer;transition:background-color .2s}
+.cx-body p{margin-bottom:18px}
+.cx-more:hover{background:var(--indigo-h)}
+.cx-more svg{width:14px;height:14px}
+@media (min-width:640px){.cx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1040px){.cx{padding:96px 0}.cx-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.cx-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px;margin-inline:auto}}
+.cdlg{width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:22px;background:#fff;color:var(--body);box-shadow:var(--sh-2);overflow:auto}
+.cdlg::backdrop{background:rgba(6,10,20,.6);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.cdlg[open]{animation:sdin .28s var(--ease)}
+.cd-img{display:block;aspect-ratio:3/2;overflow:hidden}
+.cd-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cd-in{position:relative;padding:20px 20px 22px}
+.cdlg .sd-x{position:absolute;top:12px;right:12px;z-index:2;background:rgba(255,255,255,.92)}
+.cd-in h3{font-size:21px;line-height:1.25}
+.cd-in>p{margin-top:8px;font-size:15px;line-height:1.55}
+.cd-st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cd-st div{padding:12px 14px}
+.cd-st div+div{border-left:1px solid var(--line)}
+.cd-st b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.1}
+.cd-st span{display:block;margin-top:4px;font-size:12.5px;line-height:1.35;font-weight:600;color:var(--muted)}
+.cd-in h4{margin:18px 0 10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--indigo)}
+.cd-in .sd-l{margin-bottom:18px}
+
+#proof{border-top:1px solid rgba(255,255,255,.07)}
+@media (min-width:1040px){#proof{padding-top:80px}}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
@@ -1118,6 +1166,24 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
   </div>
 </section>
 
+<!-- CASES -->
+<section class="cx" id="cases">
+  <div class="wrap">
+    <div class="cx-head rv"><span class="eyebrow">Case studies</span><h2>Our cases and results</h2><p>We don’t promise — we show what we built and what it gave the store.</p></div>
+    <div class="cx-tabs" role="tablist"><button type="button" role="tab" aria-selected="true">Full store build</button><button type="button" role="tab" aria-selected="false">Features & refinements</button></div>
+    <div class="cx-grid">
+      <article class="cx-card rv" data-tab="0"><span class="cx-img"><img src="../img/case-lunesi.webp" width="720" height="480" loading="lazy" alt="Hair care — LUNESI"><span class="cx-badge">41 European countries</span></span><div class="cx-body"><h3>Hair care — LUNESI</h3><p>Built from scratch for the UK and EU. One site sells to 41 countries — in pounds and euros, in each shopper’s language.</p><button type="button" class="cx-more" data-i="0" aria-haspopup="dialog">Learn more<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></article>
+      <article class="cx-card rv" data-tab="0"><span class="cx-img"><img src="../img/case-joyfolie.webp" width="720" height="480" loading="lazy" alt="Women’s &amp; kids’ fashion — JOYFOLIE"><span class="cx-badge">1,268 products</span></span><div class="cx-body"><h3>Women’s & kids’ fashion — JOYFOLIE</h3><p>Built from scratch for a US brand. Women’s and kids’ lines in one catalog — a mom shops for herself and her daughter in one order.</p><button type="button" class="cx-more" data-i="1" aria-haspopup="dialog">Learn more<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></article>
+      <article class="cx-card rv" data-tab="0"><span class="cx-img"><img src="../img/case-carbon.webp" width="720" height="480" loading="lazy" alt="Carbon fiber car parts — CARBON DISTRICT"><span class="cx-badge">23 car makes</span></span><div class="cx-body"><h3>Carbon fiber car parts — CARBON DISTRICT</h3><p>Built from scratch. Shoppers pick their car’s make, model and year — and see only the parts that fit.</p><button type="button" class="cx-more" data-i="2" aria-haspopup="dialog">Learn more<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></article>
+      <article class="cx-card rv" data-tab="0"><span class="cx-img"><img src="../img/case-fugazzi.webp" width="720" height="480" loading="lazy" alt="Niche fragrances — FUGAZZI"><span class="cx-badge">37 countries</span></span><div class="cx-body"><h3>Niche fragrances — FUGAZZI</h3><p>Design and build for an Amsterdam perfume house. Shoppers try 6 scents before buying a full bottle.</p><button type="button" class="cx-more" data-i="3" aria-haspopup="dialog">Learn more<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></article>
+      <article class="cx-card rv" data-tab="1"><span class="cx-img"><img src="../img/case-rinfit.webp" width="720" height="480" loading="lazy" alt="Silicone rings — RINFIT"><span class="cx-badge">8 filters</span></span><div class="cx-body"><h3>Silicone rings — RINFIT</h3><p>Figma design built pixel-perfect on the live store. Shoppers filter rings by size and color right away.</p><button type="button" class="cx-more" data-i="4" aria-haspopup="dialog">Learn more<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></article>
+      <article class="cx-card rv" data-tab="1"><span class="cx-img"><img src="../img/case-neom.webp" width="720" height="480" loading="lazy" alt="Wellbeing — NEOM"><span class="cx-badge">Set in 1 click</span></span><div class="cx-body"><h3>Wellbeing — NEOM</h3><p>A bundle builder for a London wellbeing brand: shoppers build their own set and add it to cart in one click.</p><button type="button" class="cx-more" data-i="5" aria-haspopup="dialog">Learn more<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></article>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="cxData">[{"img": "../img/case-lunesi.webp", "title": "Hair care — LUNESI", "desc": "Built from scratch for the UK and EU. One site sells to 41 countries — in pounds and euros, in each shopper’s language.", "stats": [["41", "European countries from one store"], ["6", "languages — shoppers read their own"]], "bul": ["UK and EU storefronts: prices in pounds and euros, a 6-language picker", "Free delivery per market: over €90 in the EU and over £120 in the UK", "A hair-care quiz", "Product bundles and a waitlist", "Royal Mail and DHL shipping with automatic rates and VAT"]}, {"img": "../img/case-joyfolie.webp", "title": "Women’s & kids’ fashion — JOYFOLIE", "desc": "Built from scratch for a US brand. Women’s and kids’ lines in one catalog — a mom shops for herself and her daughter in one order.", "stats": [["1,268", "products in one catalog"], ["1", "cart for both lines"]], "bul": ["Mommy & Me section with matching looks", "Pre-orders with a ship date", "Size charts and quick view", "US shipping via USPS"]}, {"img": "../img/case-carbon.webp", "title": "Carbon fiber car parts — CARBON DISTRICT", "desc": "Built from scratch. Shoppers pick their car’s make, model and year — and see only the parts that fit.", "stats": [["23", "car makes in search"], ["6,285", "parts searchable by car"]], "bul": ["Shop by car make: 23 makes from BMW and Porsche to McLaren and Tesla", "“Select Your Vehicle” menu on every page", "Filters and fitment checks", "“+ Quick add” on every card"]}, {"img": "../img/case-fugazzi.webp", "title": "Niche fragrances — FUGAZZI", "desc": "Design and build for an Amsterdam perfume house. Shoppers try 6 scents before buying a full bottle.", "stats": [["6 × 2 ml", "sample set"], ["37", "countries buy on one site"]], "bul": ["Sample-set builder: six 2 ml scents", "Each perfume page reads like a scent card: family, intensity, sillage", "Language and currency picker: Europe, UK, US, Canada, Australia, Asia", "English and Spanish versions"]}, {"img": "../img/case-rinfit.webp", "title": "Silicone rings — RINFIT", "desc": "Figma design built pixel-perfect on the live store. Shoppers filter rings by size and color right away.", "stats": [["124", "products with size and color filters"], ["8", "catalog filters"]], "bul": ["8 catalog filters: price, women’s and men’s size, color", "Quick Buy straight from the product card", "Ring size calculator", "No horizontal scroll or layout shifts on any device"]}, {"img": "../img/case-neom.webp", "title": "Wellbeing — NEOM", "desc": "A bundle builder for a London wellbeing brand: shoppers build their own set and add it to cart in one click.", "stats": [["1 click", "and the whole set is in the cart"], ["−20%", "bundle saving, up to"]], "bul": ["Step-by-step: diffuser → oils → accessories, saving up to 20%", "Subscribe & Save 10% with delivery every 4, 8 or 12 weeks", "Sticky summary: picks, saving, loyalty points and total", "NEOM’s team adds new packs in the theme editor"]}]</script>
+<dialog class="cdlg" id="cxDlg" aria-labelledby="cdT"><span class="cd-img"><img src="" width="720" height="480" alt=""></span><div class="cd-in"><button type="button" class="sd-x" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button><h3 id="cdT"></h3><p></p><div class="cd-st"></div><h4>What we did</h4><ul class="sd-l"></ul><a class="btn btn-indigo sd-cta cd-cta" href="#order" data-src="Case" data-open="Case">I want this for my store</a></div></dialog>
+
 <!-- PROOF -->
 <section class="pf" id="proof">
   <div class="wrap">
@@ -1137,42 +1203,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
 <script type="application/json" id="pfData">[{"tab": "Kids’ ride-ons", "vb": "$383K", "va": "$517K", "cap": "sales in 90 days", "tag": "Store build · design", "title": "Kids’ electric ride-on store on Shopify", "rows": [["Sales", "+35%", ""], ["Average order value", "+42%", "$303 → $430"], ["Gross sales", "+52%", ""], ["Period", "90 days", "vs the previous 90"]], "img": "../img/proof-kids.webp", "pcap": "Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025"}]</script>
 <dialog class="pfdlg" id="pfDlg" aria-label="Shopify Analytics screenshot"><img src="../img/proof-kids.webp" width="1280" height="1044" loading="lazy" alt="Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025"><p>Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025</p><button type="button" class="sd-x" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button></dialog>
 
-<!-- CASES -->
-<section class="sec" id="cases">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Case studies</span>
-      <h2>Our case studies</h2>
-      <p class="swipe" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5.5 8h8M10.5 5l3 3-3 3M10.5 8h-8M5.5 11l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Swipe for more</p>
-    </div>
-    <div class="cases">
-      <article class="case rv">
-        <span class="case-img"><img src="../img/case-lunesi.webp" width="720" height="480" loading="lazy" alt="Lunesi — store homepage"></span>
-        <div class="case-b"><small>Hair care · UK &amp; EU</small><b>LUNESI</b><p class="case-res">One store sells across Europe — in pounds and euros, in each shopper’s own language.</p><div class="case-stats"><div><b>41</b><span>European countries from one store</span></div><div><b>6</b><span>languages — shoppers read their own</span></div></div><p class="case-did"><em>Done:</em> custom design, UK and EU storefronts, quiz, bundles.</p></div>
-      </article>
-      <article class="case rv">
-        <span class="case-img"><img src="../img/case-joyfolie.webp" width="720" height="480" loading="lazy" alt="Joyfolie — store homepage"></span>
-        <div class="case-b"><small>Women’s &amp; kids’ fashion · US</small><b>JOYFOLIE</b><p class="case-res">Women’s and kids’ lines in one store: a mom shops for herself and her child in one order.</p><div class="case-stats"><div><b>1,268</b><span>products in one catalog</span></div><div><b>1</b><span>cart for both lines</span></div></div><p class="case-did"><em>Done:</em> custom design, collection storefronts, size charts.</p></div>
-      </article>
-      <article class="case rv">
-        <span class="case-img"><img src="../img/case-rinfit.webp" width="720" height="480" loading="lazy" alt="Rinfit — store homepage"></span>
-        <div class="case-b"><small>Silicone rings · US</small><b>RINFIT</b><p class="case-res">Shoppers filter rings by size and color right away — and the site looks sharp on any device.</p><div class="case-stats"><div><b>124</b><span>products with size and color filters</span></div><div><b>8</b><span>filters for a fast pick</span></div></div><p class="case-did"><em>Done:</em> Figma design built pixel-perfect, filters, layout fixes.</p></div>
-      </article>
-      <article class="case rv">
-        <span class="case-img"><img src="../img/case-carbon.webp" width="720" height="480" loading="lazy" alt="Carbon District — store homepage"></span>
-        <div class="case-b"><small>Carbon fiber car parts</small><b>CARBON DISTRICT</b><p class="case-res">Shoppers find the part for their exact car — by make, model and year — and see right away if it fits.</p><div class="case-stats"><div><b>23</b><span>car makes in search</span></div><div><b>6,285</b><span>parts searchable by car</span></div></div><p class="case-did"><em>Done:</em> custom design, search by car, filters.</p></div>
-      </article>
-      <article class="case rv">
-        <span class="case-img"><img src="../img/case-neom.webp" width="720" height="480" loading="lazy" alt="Neom Wellbeing — store homepage"></span>
-        <div class="case-b"><small>Wellbeing · UK</small><b>NEOM WELLBEING</b><p class="case-res">Shoppers build their own set and add it to cart in one click — with a saving and a subscription to come back.</p><div class="case-stats"><div><b>1 click</b><span>and the whole set is in the cart</span></div><div><b>−20%</b><span>bundle saving, up to</span></div></div><p class="case-did"><em>Done:</em> bundle builder with subscription.</p></div>
-      </article>
-      <article class="case rv">
-        <span class="case-img"><img src="../img/case-fugazzi.webp" width="720" height="480" loading="lazy" alt="Fugazzi — store homepage"></span>
-        <div class="case-b"><small>Niche fragrances</small><b>FUGAZZI</b><p class="case-res">Shoppers try 6 scents before buying a full bottle — and order from any of 37 countries.</p><div class="case-stats"><div><b>6 × 2 ml</b><span>try before you buy</span></div><div><b>37</b><span>countries buy on one site</span></div></div><p class="case-did"><em>Done:</em> store design and build, sample set builder.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
+
 
 <!-- REVIEWS -->
 <section class="sec paper" id="reviews" data-more="Read more" data-less="Show less">
@@ -1181,7 +1212,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <span class="eyebrow">Reviews</span>
       <h2>5.0 on Upwork</h2>
       <p class="rv-sum"><span class="rv-st" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>Every review — 5.0</b></p>
-      <p class="sub">What MILEDEVS clients say on Upwork — original text.</p>
+      <p class="sub">What MILEDEVS clients say on Upwork.</p>
     </div>
     <div class="rv-slider" role="region" aria-roledescription="carousel" aria-label="Reviews">
       <div class="rv-track" tabindex="0">
@@ -1636,6 +1667,25 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
   tabs.innerHTML=C.map(function(c,k){return '<button type="button" role="tab" aria-selected="'+(k?'false':'true')+'">'+c.tab+'</button>'}).join('');
   tabs.hidden=false;
   [].forEach.call(tabs.children,function(t,k){t.addEventListener('click',function(){show(k)})});
+})();
+</script>
+<script>
+/* 06.10 (9): cases tabs + Learn more modal */
+(function(){
+  var S=document.getElementById('cases'), j=document.getElementById('cxData'), d=document.getElementById('cxDlg'); if(!S||!j) return;
+  var C=JSON.parse(j.textContent), cards=[].slice.call(S.querySelectorAll('.cx-card')), grid=S.querySelector('.cx-grid'), tabs=[].slice.call(S.querySelectorAll('.cx-tabs button'));
+  function tab(k){tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===k?'true':'false')});var n=0;cards.forEach(function(c){var on=+c.getAttribute('data-tab')===k;c.hidden=!on;if(on)n++});grid.classList.toggle('two',n<3)}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){tab(i)})}); tab(0);
+  if(!d||!d.showModal) return;
+  var img=d.querySelector('.cd-img img'), h=d.querySelector('h3'), p=d.querySelector('.cd-in>p'), st=d.querySelector('.cd-st'), ul=d.querySelector('.sd-l'), cta=d.querySelector('.cd-cta');
+  S.addEventListener('click',function(e){var b=e.target.closest('.cx-more'); if(!b) return; var c=C[+b.getAttribute('data-i')];
+    img.src=c.img; img.alt=c.title; h.textContent=c.title; p.textContent=c.desc;
+    st.innerHTML=c.stats.map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('');
+    ul.innerHTML=''; c.bul.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li)});
+    cta.setAttribute('data-open',cta.getAttribute('data-src')+': '+c.title); d.showModal(); d.scrollTop=0;});
+  d.querySelector('.sd-x').addEventListener('click',function(){d.close()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+  cta.addEventListener('click',function(){d.close()});
 })();
 </script>
 </body>
