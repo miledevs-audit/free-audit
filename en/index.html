@@ -929,6 +929,30 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 
 #proof{border-top:1px solid rgba(255,255,255,.07)}
 @media (min-width:1040px){#proof{padding-top:80px}}
+
+/* === 06.10 (11): services like AXY — dark navy, centered head + hint, icon-on-top cards === */
+#services{position:relative;overflow:hidden;background:linear-gradient(180deg,#14284D 0%,#0B1530 55%,#060A14 100%);color:#fff}
+#services .sec-head{text-align:center;max-width:780px;margin-inline:auto}
+#services .eyebrow{color:var(--lav-3);justify-content:center}
+#services h2{color:#fff}
+#services h2 .nw{background:linear-gradient(92deg,#DCE6F5,#8DA4C8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#services .sub{color:rgba(255,255,255,.62)}
+.svc-hint{margin-top:16px;font-size:15px;font-weight:700;color:#fff}
+#services .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}
+#services .svc{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:center;justify-content:center;gap:14px;min-height:150px;padding:20px 12px;border-radius:16px;text-align:center;background:linear-gradient(180deg,rgba(37,64,115,.55),rgba(16,30,62,.55));border:1px solid rgba(255,255,255,.08);box-shadow:none;transition:transform .25s var(--ease),border-color .25s}
+#services .svc:hover{transform:translateY(-3px);border-color:rgba(169,188,220,.4)}
+#services .svc .ic{display:grid;place-items:center;width:48px;height:48px;margin:0;border-radius:12px;background:#1E2636;color:#A9BCDC;box-shadow:none}
+#services .svc .ic svg{width:24px;height:24px}
+#services .svc .ic::after{display:none}
+#services .svc b{flex:none;color:#fff;font-size:15px;line-height:1.35;font-weight:700}
+#services .svc.hl{grid-column:1/-1;min-height:132px;background:linear-gradient(135deg,#4C6590 0%,#2B3A57 100%);border-color:rgba(169,188,220,.45)}
+#services .svc.hl .ic{background:rgba(6,10,20,.35);color:#fff}
+#services .svc.hl b{font-size:17px}
+#services .svc.hl em{position:static;order:3;flex-basis:auto;margin:-4px 0 0;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+@media (min-width:640px){#services .svc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1040px){#services .svc-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}#services .svc{min-height:190px;padding:24px 18px}#services .svc b{font-size:16.5px}#services .svc.hl{grid-column:span 2;min-height:190px}}
+
+#services .sub{margin-inline:auto;max-width:640px}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
@@ -1149,6 +1173,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <span class="eyebrow">MILEDEVS services</span>
       <h2>What we do for Shopify stores</h2>
       <p class="sub">The audit is step one. If you decide to implement the fixes, here’s what our team does.</p>
+      <p class="svc-hint">Click a service to learn more.</p>
     </div>
     <ul class="svc-grid">
       <li tabindex="0" role="button" aria-haspopup="dialog" data-d="We review structure, navigation, product pages, cart and checkout|We find where visitors drop off|We show how to shorten the path to purchase|A report with priorities and next steps" class="svc hl wide rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 12l2 2 4-4"/></svg></i><em>start here</em><b>Conversion &amp; UX audit</b></li>
