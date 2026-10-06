@@ -873,6 +873,14 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 .pfdlg p{margin:0;padding:12px 56px 14px 16px;font-size:13px;color:var(--muted)}
 .pfdlg .sd-x{top:auto;bottom:6px;right:6px}
 @media (min-width:900px){.pf{padding:88px 0}.pf-cmp{height:300px}}
+
+/* 06.10 (8): proof tabs */
+.pf-tabs{display:flex;gap:8px;margin-top:20px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pf-tabs::-webkit-scrollbar{display:none}
+.pf-tabs[hidden]{display:none}
+.pf-tabs button{flex:none;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:transparent;color:rgba(255,255,255,.75);font:700 13.5px/1 var(--f);cursor:pointer}
+.pf-tabs button[aria-selected="true"]{background:#fff;border-color:#fff;color:var(--ink)}
+.pf-tabs+.pf-cmp{margin-top:16px}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -1115,6 +1123,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   <div class="wrap">
     <span class="eyebrow">Кейс · до / після</span>
     <h2>Потягніть і порівняйте</h2>
+    <div class="pf-tabs" role="tablist" hidden></div>
     <div class="pf-cmp rv" id="pfCmp">
       <div class="pf-l pf-b"><span class="pf-k">До</span><b>$383 тис.</b><span class="pf-c">продажі за 90 днів</span><i class="pf-bars" aria-hidden="true"><em style="height:26%"></em><em style="height:22%"></em><em style="height:30%"></em><em style="height:28%"></em></i></div>
       <div class="pf-l pf-a" aria-hidden="true"><span class="pf-k">Після</span><b>$517 тис.</b><span class="pf-c">продажі за 90 днів</span><i class="pf-bars" aria-hidden="true"><em style="height:42%"></em><em style="height:58%"></em><em style="height:74%"></em><em style="height:96%"></em></i></div>
@@ -1125,6 +1134,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
       <button type="button" class="pf-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Скрін із Shopify Analytics</button></div>
   </div>
 </section>
+<script type="application/json" id="pfData">[{"tab": "Дитячі електромобілі", "vb": "$383 тис.", "va": "$517 тис.", "cap": "продажі за 90 днів", "tag": "Розробка магазину · дизайн", "title": "Магазин дитячих електромобілів на Shopify", "rows": [["Продажі", "+35 %", ""], ["Середній чек", "+42 %", "$303 → $430"], ["Валові продажі", "+52 %", ""], ["Період", "90 днів", "проти попередніх 90"]], "img": "img/proof-kids.webp", "pcap": "Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025"}]</script>
 <dialog class="pfdlg" id="pfDlg" aria-label="Скрін із Shopify Analytics"><img src="img/proof-kids.webp" width="1280" height="1044" loading="lazy" alt="Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025"><p>Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025</p><button type="button" class="sd-x" aria-label="Закрити"><svg aria-hidden="true"><use href="#i-x"/></svg></button></dialog>
 
 <!-- CASES -->
@@ -1604,6 +1614,27 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   }
   var d=document.getElementById('pfDlg'), b=document.querySelector('.pf-proof');
   if(d&&b&&d.showModal){b.addEventListener('click',function(){d.showModal()});d.querySelector('.sd-x').addEventListener('click',function(){d.close()});d.addEventListener('click',function(e){if(e.target===d)d.close()})}
+})();
+</script>
+<script>
+/* 06.10 (8): proof cases as tabs — add a case = add an object to #pfData */
+(function(){
+  var el=document.getElementById('pfData'), sec=document.getElementById('proof'); if(!el||!sec) return;
+  var C=JSON.parse(el.textContent); if(C.length<2) return;
+  var tabs=sec.querySelector('.pf-tabs'), b=sec.querySelector('.pf-b'), a=sec.querySelector('.pf-a'), card=sec.querySelector('.pf-card'), dimg=document.querySelector('#pfDlg img'), dcap=document.querySelector('#pfDlg p');
+  function bars(h){return h.map(function(x){return '<em style="height:'+x+'%"></em>'}).join('')}
+  function show(i){
+    var c=C[i];
+    b.querySelector('b').textContent=c.vb; a.querySelector('b').textContent=c.va;
+    b.querySelector('.pf-c').textContent=a.querySelector('.pf-c').textContent=c.cap;
+    card.querySelector('.pf-tag').textContent=c.tag; card.querySelector('h3').textContent=c.title;
+    card.querySelector('.pf-rows').innerHTML=c.rows.map(function(r){return '<div><dt>'+r[0]+'</dt><dd'+(/^[+−-]/.test(r[1])&&r[1][0]==='+'?' class="up"':'')+'>'+r[1]+(r[2]?'<small>'+r[2]+'</small>':'')+'</dd></div>'}).join('');
+    var p=card.querySelector('.pf-proof'); p.hidden=!c.img; if(c.img){dimg.src=c.img;dcap.textContent=c.pcap}
+    [].forEach.call(tabs.children,function(t,k){t.setAttribute('aria-selected',k===i?'true':'false')});
+  }
+  tabs.innerHTML=C.map(function(c,k){return '<button type="button" role="tab" aria-selected="'+(k?'false':'true')+'">'+c.tab+'</button>'}).join('');
+  tabs.hidden=false;
+  [].forEach.call(tabs.children,function(t,k){t.addEventListener('click',function(){show(k)})});
 })();
 </script>
 </body>
