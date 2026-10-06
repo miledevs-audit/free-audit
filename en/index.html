@@ -717,6 +717,70 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
   html{scroll-behavior:auto}
   .js .rv{opacity:1;transform:none}
 }
+
+/* === 06.10 edits: before/after, services popup, Upwork cards, Shopify mark === */
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:640px;margin:0 auto;padding:22px 14px 26px;border-radius:28px;background:radial-gradient(110% 60% at 50% 0%,#fff 0%,rgba(255,255,255,0) 62%),var(--paper);border:1px solid var(--line-2)}
+.ba-col{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+.ba-tag{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 18px 0 6px;border-radius:999px;background:#fff;box-shadow:var(--sh-1);font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.ba-tag i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:#fff}
+.ba-tag i svg{width:14px;height:14px}
+.ba-tag.bad{color:var(--red)}.ba-tag.bad i{background:var(--red-2)}
+.ba-tag.good{color:var(--green)}.ba-tag.good i{background:var(--green-2)}
+.ba .phone{--pw:236px}
+.ba .good-ph .phone{box-shadow:0 0 0 3px rgba(31,157,90,.55),0 30px 60px -24px rgba(31,157,90,.55)}
+.ba .bad-ph .phone{box-shadow:0 0 0 3px rgba(229,72,77,.45),0 30px 60px -24px rgba(20,21,27,.35)}
+.ba .mk{opacity:1;transform:none}.ba .below{opacity:1;transform:translate(-50%,0)}
+.ba-win{display:flex;align-items:center;justify-content:center;gap:12px;max-width:640px;margin:16px auto 0;padding:14px 18px;border-radius:18px;background:var(--green-bg);color:#0F5132;font-size:16.5px;font-weight:700;line-height:1.35}
+.ba-win i{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:var(--green-2);color:#fff}
+.ba-win i svg{width:16px;height:16px}
+@media (max-width:640px){.ba{gap:10px;padding:18px 10px 20px;margin-inline:-4px}.ba .phone{--pw:calc((100vw - 74px)/2)}.ba-tag{height:34px;font-size:13px;padding-right:14px}.ba-tag i{width:24px;height:24px}.ba-win{font-size:15px;padding:12px 14px;justify-content:flex-start}}
+.svc{position:relative;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s}
+.svc .ic{position:relative}
+.svc .ic::after{content:"+";position:absolute;right:-6px;top:-6px;width:17px;height:17px;border-radius:50%;background:var(--indigo);color:#fff;font:700 13px/17px var(--f);text-align:center;box-shadow:0 0 0 2px #fff}
+.svc.hl .ic::after{background:#fff;color:var(--ink);box-shadow:0 0 0 2px var(--ink)}
+.svc:hover{transform:translateY(-2px)}
+.svc:focus-visible{outline:2.5px solid var(--violet);outline-offset:3px}
+.sdlg{width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 48px);padding:0;border:0;border-radius:24px;background:#fff;color:var(--body);box-shadow:var(--sh-2)}
+.sdlg::backdrop{background:rgba(6,10,20,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.sdlg[open]{animation:sdin .28s var(--ease)}
+@keyframes sdin{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.sd-in{position:relative;padding:26px 22px 22px}
+.sd-x{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:var(--paper);color:var(--text);cursor:pointer}
+.sd-x svg{width:16px;height:16px}
+.sd-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--lav);color:var(--indigo)}
+.sd-ic svg{width:22px;height:22px}
+.sdlg h3{margin:14px 44px 12px 0;font-size:21px}
+.sd-l{display:grid;gap:9px;margin:0 0 20px}
+.sd-l li{position:relative;padding-left:26px;font-size:15px;line-height:1.45}
+.sd-l li::before{content:"";position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--green-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.4l2.4 2.4 4.6-5.2' fill='none' stroke='%2316804A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.sd-cta{width:100%;justify-content:center}
+.up{gap:10px;font-family:var(--sys);border-radius:18px}
+.up-hd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-2px 0 2px;padding-bottom:10px;border-bottom:1px solid var(--line-2)}
+.up-pf{display:flex;flex-direction:column;line-height:1.2}
+.up-pf b{font:800 14px/1.2 var(--f);color:var(--text)}
+.up-pf small{font-size:11px;font-weight:600;color:var(--muted)}
+.up-src{padding:4px 10px;border-radius:999px;background:#E7F5E1;color:#108A00;font:800 12px/1.3 var(--sys)}
+.up-t{font:500 17px/1.3 var(--sys);color:#181818;letter-spacing:-.01em}
+.up-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px 9px;font-size:13.5px;color:#5E6D55}
+.up-meta .rv-st{color:#F25800}
+.up-meta b{font-weight:500;color:#181818;font-size:15px}
+.up-meta i{width:1px;height:16px;background:#9AA0A6}
+.up-meta time{color:#5E6675}
+.up-sh{display:grid;place-items:center;width:28px;height:28px;border:1.5px solid #108A00;border-radius:50%;color:#108A00}
+.up-sh svg{width:14px;height:14px}
+.up-q p{font-family:var(--sys);font-style:italic;font-size:14.5px;line-height:1.55;color:#181818}
+.up-end{font-size:13.5px;color:#181818}
+.up-tags{display:flex;flex-wrap:wrap;gap:6px}
+.up-tags li{padding:4px 10px;border-radius:6px;background:#E4EBE4;color:#181818;font-size:12px}
+.up .rv-act{justify-content:flex-start;gap:4px 16px}
+.up-tr{font-size:12.5px}
+.rvw.up .q-en[hidden],.rvw.up .q-tx[hidden]{display:none!important}
+.hero-copy{position:relative}
+.shp{position:absolute;top:-4px;right:0;display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:linear-gradient(145deg,rgba(149,191,71,.22),rgba(149,191,71,.06));border:1px solid rgba(149,191,71,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 10px 30px -10px rgba(149,191,71,.45),inset 0 1px 0 rgba(255,255,255,.12);opacity:.85;animation:shpf 6s ease-in-out infinite}
+.shp svg{width:30px;height:30px;fill:#95BF47;opacity:.9}
+@keyframes shpf{50%{transform:translateY(-5px)}}
+@media (max-width:374px){.shp{width:48px;height:48px;border-radius:15px}.shp svg{width:25px;height:25px}}
+@media (prefers-reduced-motion:reduce){.shp{animation:none}}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
@@ -762,6 +826,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
+      <span class="shp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg></span>
       <span class="chip"><i class="pulse" aria-hidden="true"></i>Free. No strings attached.</span>
       <h1>See exactly where your <span class="nw">Shopify store</span> is <em>losing customers</em></h1>
       <p class="lead"><b>Your ads bring people in. Your store lets them go.</b> We’ll show you where it happens and mock up what it should look like instead.</p>
@@ -815,23 +880,10 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
     <div class="sec-head rv">
       <span class="eyebrow">From a real audit</span>
       <h2>What the audit looks like</h2>
-      <p class="sub">Every issue is shown on a real screenshot of your store, right next to a mockup of the fix. Here’s one from an audit of a car-tuning store:</p>
     </div>
 
-    <div class="cmp rv" id="cmp" data-v="now">
-      <div class="cmp-head">
-        <span class="tag tag-amber">Finding 08 · Quick fix</span>
-        <h3>The product title shows up twice and pushes the price below the fold</h3>
-      </div>
-
-      <div class="cmp-vis">
-        <div class="seg" role="group" aria-label="Compare: now vs. proposed">
-          <span class="seg-ind" aria-hidden="true"></span>
-          <button type="button" class="on" data-v="now" aria-pressed="true"><svg aria-hidden="true"><use href="#i-x"/></svg>Now</button>
-          <button type="button" data-v="new" aria-pressed="false"><svg aria-hidden="true"><use href="#i-chk"/></svg>Proposed</button>
-        </div>
-        <div class="cmp-stage">
-          <figure class="cmp-ph ph-now">
+    <div class="ba rv" id="ba">
+      <figure class="ba-col bad-ph"><span class="ba-tag bad"><i><svg aria-hidden="true"><use href="#i-x"/></svg></i>Before</span>
             <div class="phone">
               <div class="scr">
                 <div class="island"></div>
@@ -845,10 +897,8 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
                 <div class="ubar"><span><svg><use href="#i-lock"/></svg>carbon-district.com</span></div>
               </div>
             </div>
-            <figcaption><i></i>Now: title above and below the photo</figcaption>
-          </figure>
-          <span class="cmp-arrow" aria-hidden="true"><svg><use href="#i-arr"/></svg></span>
-          <figure class="cmp-ph ph-new">
+      </figure>
+      <figure class="ba-col good-ph"><span class="ba-tag good"><i><svg aria-hidden="true"><use href="#i-chk"/></svg></i>After</span>
             <div class="phone">
               <div class="scr">
                 <div class="island"></div>
@@ -860,21 +910,10 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
                 <div class="ubar"><span><svg><use href="#i-lock"/></svg>carbon-district.com</span></div>
               </div>
             </div>
-            <figcaption><i></i>Proposed: price on the first screen</figcaption>
-          </figure>
-        </div>
-        <p class="hint" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5.5 8h8M10.5 5l3 3-3 3M10.5 8h-8M5.5 11l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Tap or swipe to compare</p>
-      </div>
-
-      <div class="cmp-txt">
-        <p class="cmp-win"><i aria-hidden="true"><svg><use href="#i-up"/></svg></i><span>Shoppers see the price right away — no scrolling just to find out if it fits their budget.</span></p>
-      </div>
+      </figure>
     </div>
-
-    <div class="cmp-foot rv">
-      <p class="cmp-cap">Every finding looks like this: the real screen, a mockup and the payoff. This audit had <b>8</b> of them.</p>
-      <a class="btn btn-indigo" href="#order" data-open="Audit example">I want this for my store</a>
-    </div>
+    <p class="ba-win rv"><i aria-hidden="true"><svg><use href="#i-up"/></svg></i><span>Shoppers see the price right away — no scrolling</span></p>
+    <div class="cmp-foot rv"><a class="btn btn-indigo" href="#order" data-open="Audit example">I want this for my store</a></div>
   </div>
 </section>
 
@@ -920,9 +959,8 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
         <div class="tile wide rv">
           <div class="t-top">
             <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></i>
-            <b>The shopper’s journey</b>
+            <b>Customer journey analysis</b>
           </div>
-          <p class="journey"><em>home</em><i>→</i><em>collection</em><i>→</i><em>product page</em><i>→</i><em>cart</em><i>→</i><em>checkout</em></p>
           <span class="devices"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="10" rx="1.5"/><path d="M1.5 17.5h17"/><rect x="17.5" y="9" width="5" height="10" rx="1.2"/></svg>on mobile and desktop</span>
         </div>
         <div class="tile rv">
@@ -967,17 +1005,17 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <p class="sub">The audit is step one. If you decide to implement the fixes, here’s what our team does.</p>
     </div>
     <ul class="svc-grid">
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.2 10.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg></i><b>Shopify store setup from scratch</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.9-.7-1.3-.7-2.1 0-.9.8-1.5 1.7-1.5H17a4 4 0 0 0 4-4C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></i><b>Custom store design</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4a2 2 0 1 0 0 4v4H3V9h4a2 2 0 1 1 0-4h2V3z"/><path d="M15 15h6v6h-6z"/></svg></i><b>App integration</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 14l4.5-4.5"/></svg></i><b>Performance optimization</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></i><b>SEO</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Ongoing support</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/></svg></i><b>Migration to Shopify</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4M12 20v-4M8 12H4M20 12h-4"/><circle cx="12" cy="12" r="4"/></svg></i><b>Shopify automation</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4l11 5V5L4 10z"/><path d="M15 9.5a3 3 0 0 1 0 5"/><path d="M7 14.5l1.5 5"/></svg></i><b>Facebook Ads</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg></i><b>SMM</b></li>
-      <li class="svc hl wide rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 12l2 2 4-4"/></svg></i><em>start here</em><b>Conversion &amp; UX audit</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="We review structure, navigation, product pages, cart and checkout|We find where visitors drop off|We show how to shorten the path to purchase|A report with priorities and next steps" class="svc hl wide rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 12l2 2 4-4"/></svg></i><em>start here</em><b>Conversion &amp; UX audit</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Goals, audience, features and timeline|Premium theme or a fully custom build|Design, apps, shipping, payments and products|Documentation and post-launch support" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.2 10.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg></i><b>Shopify store setup from scratch</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Brand and audience analysis|User flows from landing to checkout|Custom design for mobile and desktop|Built into a working Shopify theme and tested" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.9-.7-1.3-.7-2.1 0-.9.8-1.5 1.7-1.5H17a4 4 0 0 0 4-4C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></i><b>Custom store design</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Apps for inventory, shipping, subscriptions, reviews, email|Configured for your workflows|Integrated with your theme without conflicts|Checked for impact on speed and checkout" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4a2 2 0 1 0 0 4v4H3V9h4a2 2 0 1 1 0-4h2V3z"/><path d="M15 15h6v6h-6z"/></svg></i><b>App integration</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="We find what slows loading down|Image compression and lazy loading|Code cleanup, unused scripts removed|Mobile speed tuning; before/after report" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 14l4.5-4.5"/></svg></i><b>Performance optimization</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Technical SEO: speed, indexing, schema|Titles, meta and copy built on buyer intent|Backlinks from relevant sites|Monthly report: rankings, traffic, conversions" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></i><b>SEO</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Fast fixes for bugs, theme and app conflicts|Safe app updates|New features, sections and design tweaks|Regular mini-audits" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Ongoing support</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Customers, orders, products, collections, pages|Data cleaned to fit Shopify|Design on the new platform|Testing and launch with minimal downtime" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/></svg></i><b>Migration to Shopify</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="We map orders, fulfillment, emails and inventory|Shopify Flow, Klaviyo, CRM|Order status, abandoned cart and post-purchase flows|Handover and training for your team" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4M12 20v-4M8 12H4M20 12h-4"/><circle cx="12" cy="12" r="4"/></svg></i><b>Shopify automation</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Offer and audience research|Funnel: awareness → consideration → conversion|Business Manager, pixel, events|Creatives, launch, scaling and reports" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4l11 5V5L4 10z"/><path d="M15 9.5a3 3 0 0 1 0 5"/><path d="M7 14.5l1.5 5"/></svg></i><b>Facebook Ads</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Brand voice, audience and platforms|Content calendar: posts, reels, stories|Publishing and community|Monthly analytics" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg></i><b>SMM</b></li>
     </ul>
   </div>
 </section>
@@ -1018,65 +1056,68 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <span class="eyebrow">Reviews</span>
       <h2>5.0 on Upwork</h2>
       <p class="rv-sum"><span class="rv-st" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>8 reviews · all 5.0</b></p>
-      <p class="sub">What clients say about working with MileDevs founder Evgenii.</p>
+      <p class="sub">What MileDevs clients say on Upwork — original text.</p>
     </div>
     <div class="rv-slider" role="region" aria-roledescription="carousel" aria-label="Reviews">
       <div class="rv-track" tabindex="0">
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="1 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Apr – Jul 2025</time></span>Shopify Website Development</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"The work on the website was done perfectly. Even beyond what we initially agreed on. Evgenii took initiative and handled tasks that weren’t technically part of his responsibility. Really appreciated the extra effort and professionalism."</p></div></blockquote>
-        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button></div><ul class="rv-tags"><li>Committed to Quality</li><li>Solution Oriented</li><li>Professional</li></ul>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · Endorsed by client</p>
-      </article>
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="2 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Jul 2025</time></span>Shopify Theme Development Expert Needed</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"Evgenii was very attentive to my needs. I explained to him the development on my website and he knew exactly what I wanted from the beginning. He is very skilled at what he does and I couldn't recommend him enough. From this point on he is going to be my go to man for any development I need and you would be silly if you don't as well."</p></div></blockquote>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="1 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Website Development</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Apr 11, 2025 - Jul 17, 2025</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"The work on the website was done perfectly. Even beyond what we initially agreed on. […] Really appreciated the extra effort and professionalism."</p></div></blockquote>
         <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+        <p class="up-end">Endorsed by client</p>
+        <ul class="up-tags"><li>Committed to Quality</li><li>Solution Oriented</li><li>Professional</li></ul>
       </article>
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="3 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Jan 2024</time></span>Shopify Bug Fixing, New Feature Implementation and integrating third party app</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"I had an outstanding experience working with Evgenii on a recent project. His professionalism, technical proficiency, and attention to detail were truly commendable. Evgenii not only addressed and fixed multiple sections on our homepage but also seamlessly integrated a real-time updating TikTok section, adding a dynamic touch to our platform.</p><p>What impressed me the most was his ability to create a well-structured megamenu for both mobile and desktop versions, demonstrating a deep understanding of best-practice principles. Communication was prompt and clear throughout the project.</p><p>I highly recommend Evgenii to the Upwork community for anyone seeking a skilled and reliable freelancer. Looking forward to future collaborations!"</p></div></blockquote>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="2 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Theme Development Expert Needed</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jul 21, 2025 - Jul 23, 2025</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"[…] He is very skilled at what he does and I couldn't recommend him enough. From this point on he is going to be my go to man for any development I need and you would be silly if you don't as well."</p></div></blockquote>
         <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
       </article>
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="4 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Sep 2024</time></span>Shopify Product Page Customization - Liquid &amp; Javascript code</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"Evgenii finished my shopify customization on time, within spec, and did a great job. His price to do the job was very reasonable, English language skills are excellent, and I would absolutely recommend him and work with him again. Thanks Evgenii, we'll be working again in the near future!"</p></div></blockquote>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="3 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Bug Fixing, New Feature Implementation and integrating third party app</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jan 22, 2024 - Jan 22, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"[…] His professionalism, technical proficiency, and attention to detail were truly commendable. […] What impressed me the most was his ability to create a well-structured megamenu for both mobile and desktop versions, demonstrating a deep understanding of best-practice principles. Communication was prompt and clear throughout the project."</p></div></blockquote>
         <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · Endorsed by client</p>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="5 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Feb – Aug 2025</time></span>Migration developer from Big Commerce to Shopify</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"Talented developer - highly recommend"</p></div></blockquote>
-        <div class="rv-act"></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="4 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Product Page Customization - Liquid &amp; Javascript code</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Sep 10, 2024 - Sep 17, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"[…] His price to do the job was very reasonable, English language skills are excellent, and I would absolutely recommend him and work with him again. […]"</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Read more</button></div>
+        <p class="up-end">Endorsed by client</p>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="6 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Nov 2024</time></span>Shopify theme developer needed</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"Great work, delivery accuracy, and speed!"</p></div></blockquote>
-        <div class="rv-act"></div><ul class="rv-tags"><li>Committed to Quality</li><li>Reliable</li></ul>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · Endorsed by client</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="5 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Migration developer from Big Commerce to Shopify</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Feb 25, 2025 - Aug 15, 2025</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"Talented developer - highly recommend"</p></div></blockquote>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="7 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Jul 2025 – May 2026</time></span>XML for B2B purposes</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"Everything went well"</p></div></blockquote>
-        <div class="rv-act"></div><ul class="rv-tags"><li>Clear Communicator</li></ul>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · Endorsed by client</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="6 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify theme developer needed</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Nov 19, 2024 - Nov 20, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"Great work, delivery accuracy, and speed!"</p></div></blockquote>
+        <p class="up-end">Endorsed by client</p>
+        <ul class="up-tags"><li>Committed to Quality</li><li>Reliable</li></ul>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="8 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Project · <time>Jun – Aug 2024</time></span>Shopify UNSEN theme customization</p>
-        <blockquote class="rv-q"><div class="q-tx"><p>"Great Work!"</p></div></blockquote>
-        <div class="rv-act"></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="7 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">XML for B2B purposes</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jul 11, 2025 - May 11, 2026</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"Everything went well"</p></div></blockquote>
+        <p class="up-end">Endorsed by client</p>
+        <ul class="up-tags"><li>Clear Communicator</li></ul>
+      </article>
+      <article class="rvw up" aria-roledescription="slide" aria-label="8 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify UNSEN theme customization</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jun 6, 2024 - Aug 28, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-tx" lang="en"><p>"Great Work!"</p></div></blockquote>
       </article>
       </div>
       <div class="rv-nav" aria-label="Reviews navigation">
@@ -1088,6 +1129,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
     </div>
   </div>
 </section>
+<dialog class="sdlg" id="svcDlg" aria-labelledby="sdT"><div class="sd-in"><button type="button" class="sd-x" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button><i class="sd-ic" aria-hidden="true"></i><h3 id="sdT"></h3><ul class="sd-l"></ul><a class="btn btn-indigo sd-cta" href="#order" data-src="Service" data-open="Service">Get a free audit</a></div></dialog>
 <!-- /REVIEWS -->
 
 <!-- ORDER -->
@@ -1389,6 +1431,27 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       .then(function(r){return r.json().then(function(j){return r.ok&&String(j.success)==='true'})}).catch(function(){return false});
     Promise.all([tgP,mailP]).then(function(a){done(a[0]||a[1]);});
   });
+})();
+</script>
+<script>
+/* 06.10: послуги — попап з описом */
+(function(){
+  var d=document.getElementById('svcDlg'); if(!d||!d.showModal) return;
+  var h=d.querySelector('h3'), ul=d.querySelector('.sd-l'), ic=d.querySelector('.sd-ic'), cta=d.querySelector('.sd-cta');
+  function show(li){
+    h.textContent=li.querySelector('b').textContent;
+    ic.innerHTML=li.querySelector('.ic').innerHTML;
+    ul.innerHTML=''; (li.getAttribute('data-d')||'').split('|').forEach(function(x){if(!x)return;var e=document.createElement('li');e.textContent=x;ul.appendChild(e)});
+    cta.setAttribute('data-open',cta.getAttribute('data-src')+': '+h.textContent);
+    d.showModal();
+  }
+  [].forEach.call(document.querySelectorAll('.svc[data-d]'),function(li){
+    li.addEventListener('click',function(){show(li)});
+    li.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(li)}});
+  });
+  d.querySelector('.sd-x').addEventListener('click',function(){d.close()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+  cta.addEventListener('click',function(){d.close()});
 })();
 </script>
 </body>

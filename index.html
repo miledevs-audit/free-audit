@@ -717,6 +717,70 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
   html{scroll-behavior:auto}
   .js .rv{opacity:1;transform:none}
 }
+
+/* === 06.10 edits: before/after, services popup, Upwork cards, Shopify mark === */
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:640px;margin:0 auto;padding:22px 14px 26px;border-radius:28px;background:radial-gradient(110% 60% at 50% 0%,#fff 0%,rgba(255,255,255,0) 62%),var(--paper);border:1px solid var(--line-2)}
+.ba-col{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+.ba-tag{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 18px 0 6px;border-radius:999px;background:#fff;box-shadow:var(--sh-1);font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.ba-tag i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:#fff}
+.ba-tag i svg{width:14px;height:14px}
+.ba-tag.bad{color:var(--red)}.ba-tag.bad i{background:var(--red-2)}
+.ba-tag.good{color:var(--green)}.ba-tag.good i{background:var(--green-2)}
+.ba .phone{--pw:236px}
+.ba .good-ph .phone{box-shadow:0 0 0 3px rgba(31,157,90,.55),0 30px 60px -24px rgba(31,157,90,.55)}
+.ba .bad-ph .phone{box-shadow:0 0 0 3px rgba(229,72,77,.45),0 30px 60px -24px rgba(20,21,27,.35)}
+.ba .mk{opacity:1;transform:none}.ba .below{opacity:1;transform:translate(-50%,0)}
+.ba-win{display:flex;align-items:center;justify-content:center;gap:12px;max-width:640px;margin:16px auto 0;padding:14px 18px;border-radius:18px;background:var(--green-bg);color:#0F5132;font-size:16.5px;font-weight:700;line-height:1.35}
+.ba-win i{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:var(--green-2);color:#fff}
+.ba-win i svg{width:16px;height:16px}
+@media (max-width:640px){.ba{gap:10px;padding:18px 10px 20px;margin-inline:-4px}.ba .phone{--pw:calc((100vw - 74px)/2)}.ba-tag{height:34px;font-size:13px;padding-right:14px}.ba-tag i{width:24px;height:24px}.ba-win{font-size:15px;padding:12px 14px;justify-content:flex-start}}
+.svc{position:relative;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s}
+.svc .ic{position:relative}
+.svc .ic::after{content:"+";position:absolute;right:-6px;top:-6px;width:17px;height:17px;border-radius:50%;background:var(--indigo);color:#fff;font:700 13px/17px var(--f);text-align:center;box-shadow:0 0 0 2px #fff}
+.svc.hl .ic::after{background:#fff;color:var(--ink);box-shadow:0 0 0 2px var(--ink)}
+.svc:hover{transform:translateY(-2px)}
+.svc:focus-visible{outline:2.5px solid var(--violet);outline-offset:3px}
+.sdlg{width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 48px);padding:0;border:0;border-radius:24px;background:#fff;color:var(--body);box-shadow:var(--sh-2)}
+.sdlg::backdrop{background:rgba(6,10,20,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.sdlg[open]{animation:sdin .28s var(--ease)}
+@keyframes sdin{from{opacity:0;transform:translateY(14px) scale(.98)}}
+.sd-in{position:relative;padding:26px 22px 22px}
+.sd-x{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:var(--paper);color:var(--text);cursor:pointer}
+.sd-x svg{width:16px;height:16px}
+.sd-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--lav);color:var(--indigo)}
+.sd-ic svg{width:22px;height:22px}
+.sdlg h3{margin:14px 44px 12px 0;font-size:21px}
+.sd-l{display:grid;gap:9px;margin:0 0 20px}
+.sd-l li{position:relative;padding-left:26px;font-size:15px;line-height:1.45}
+.sd-l li::before{content:"";position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--green-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.4l2.4 2.4 4.6-5.2' fill='none' stroke='%2316804A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.sd-cta{width:100%;justify-content:center}
+.up{gap:10px;font-family:var(--sys);border-radius:18px}
+.up-hd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-2px 0 2px;padding-bottom:10px;border-bottom:1px solid var(--line-2)}
+.up-pf{display:flex;flex-direction:column;line-height:1.2}
+.up-pf b{font:800 14px/1.2 var(--f);color:var(--text)}
+.up-pf small{font-size:11px;font-weight:600;color:var(--muted)}
+.up-src{padding:4px 10px;border-radius:999px;background:#E7F5E1;color:#108A00;font:800 12px/1.3 var(--sys)}
+.up-t{font:500 17px/1.3 var(--sys);color:#181818;letter-spacing:-.01em}
+.up-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px 9px;font-size:13.5px;color:#5E6D55}
+.up-meta .rv-st{color:#F25800}
+.up-meta b{font-weight:500;color:#181818;font-size:15px}
+.up-meta i{width:1px;height:16px;background:#9AA0A6}
+.up-meta time{color:#5E6675}
+.up-sh{display:grid;place-items:center;width:28px;height:28px;border:1.5px solid #108A00;border-radius:50%;color:#108A00}
+.up-sh svg{width:14px;height:14px}
+.up-q p{font-family:var(--sys);font-style:italic;font-size:14.5px;line-height:1.55;color:#181818}
+.up-end{font-size:13.5px;color:#181818}
+.up-tags{display:flex;flex-wrap:wrap;gap:6px}
+.up-tags li{padding:4px 10px;border-radius:6px;background:#E4EBE4;color:#181818;font-size:12px}
+.up .rv-act{justify-content:flex-start;gap:4px 16px}
+.up-tr{font-size:12.5px}
+.rvw.up .q-en[hidden],.rvw.up .q-tx[hidden]{display:none!important}
+.hero-copy{position:relative}
+.shp{position:absolute;top:-4px;right:0;display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:linear-gradient(145deg,rgba(149,191,71,.22),rgba(149,191,71,.06));border:1px solid rgba(149,191,71,.32);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 10px 30px -10px rgba(149,191,71,.45),inset 0 1px 0 rgba(255,255,255,.12);opacity:.85;animation:shpf 6s ease-in-out infinite}
+.shp svg{width:30px;height:30px;fill:#95BF47;opacity:.9}
+@keyframes shpf{50%{transform:translateY(-5px)}}
+@media (max-width:374px){.shp{width:48px;height:48px;border-radius:15px}.shp svg{width:25px;height:25px}}
+@media (prefers-reduced-motion:reduce){.shp{animation:none}}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -762,6 +826,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
+      <span class="shp" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg></span>
       <span class="chip"><i class="pulse" aria-hidden="true"></i>Безкоштовно і без зобовʼязань</span>
       <h1>Безкоштовно знайдемо, де ваш <span class="nw">Shopify-магазин</span> <em>втрачає покупців</em></h1>
       <p class="lead"><b>Реклама приводить людей. Магазин їх відпускає.</b> Покажемо, де саме, і дамо макет, як має бути.</p>
@@ -815,23 +880,10 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     <div class="sec-head rv">
       <span class="eyebrow">Приклад з реального аудиту</span>
       <h2>Як виглядає аудит</h2>
-      <p class="sub">Кожна проблема — на реальному екрані вашого сайту, поруч макет, як має бути. Приклад з аудиту магазину тюнінгу авто:</p>
     </div>
 
-    <div class="cmp rv" id="cmp" data-v="now">
-      <div class="cmp-head">
-        <span class="tag tag-amber">Знахідка 08 · Дрібна правка</span>
-        <h3>Назва товару двічі виштовхує ціну з першого екрана</h3>
-      </div>
-
-      <div class="cmp-vis">
-        <div class="seg" role="group" aria-label="Порівняння: зараз і пропонуємо">
-          <span class="seg-ind" aria-hidden="true"></span>
-          <button type="button" class="on" data-v="now" aria-pressed="true"><svg aria-hidden="true"><use href="#i-x"/></svg>Зараз</button>
-          <button type="button" data-v="new" aria-pressed="false"><svg aria-hidden="true"><use href="#i-chk"/></svg>Пропонуємо</button>
-        </div>
-        <div class="cmp-stage">
-          <figure class="cmp-ph ph-now">
+    <div class="ba rv" id="ba">
+      <figure class="ba-col bad-ph"><span class="ba-tag bad"><i><svg aria-hidden="true"><use href="#i-x"/></svg></i>До</span>
             <div class="phone">
               <div class="scr">
                 <div class="island"></div>
@@ -845,10 +897,8 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
                 <div class="ubar"><span><svg><use href="#i-lock"/></svg>carbon-district.com</span></div>
               </div>
             </div>
-            <figcaption><i></i>Зараз — назва над і під фото</figcaption>
-          </figure>
-          <span class="cmp-arrow" aria-hidden="true"><svg><use href="#i-arr"/></svg></span>
-          <figure class="cmp-ph ph-new">
+      </figure>
+      <figure class="ba-col good-ph"><span class="ba-tag good"><i><svg aria-hidden="true"><use href="#i-chk"/></svg></i>Після</span>
             <div class="phone">
               <div class="scr">
                 <div class="island"></div>
@@ -860,21 +910,10 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
                 <div class="ubar"><span><svg><use href="#i-lock"/></svg>carbon-district.com</span></div>
               </div>
             </div>
-            <figcaption><i></i>Пропонуємо — ціна на першому екрані</figcaption>
-          </figure>
-        </div>
-        <p class="hint" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5.5 8h8M10.5 5l3 3-3 3M10.5 8h-8M5.5 11l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Торкніться або проведіть, щоб порівняти</p>
-      </div>
-
-      <div class="cmp-txt">
-        <p class="cmp-win"><i aria-hidden="true"><svg><use href="#i-up"/></svg></i><span>Покупець одразу бачить ціну — не треба гортати, щоб зрозуміти, чи товар йому по кишені.</span></p>
-      </div>
+      </figure>
     </div>
-
-    <div class="cmp-foot rv">
-      <p class="cmp-cap">Так виглядає кожна знахідка: реальний екран, макет і користь. У цьому аудиті їх було <b>8</b>.</p>
-      <a class="btn btn-indigo" href="#order" data-open="Приклад аудиту">Хочу такий аудит свого магазину</a>
-    </div>
+    <p class="ba-win rv"><i aria-hidden="true"><svg><use href="#i-up"/></svg></i><span>Покупець одразу бачить ціну — без прокрутки</span></p>
+    <div class="cmp-foot rv"><a class="btn btn-indigo" href="#order" data-open="Приклад аудиту">Хочу такий аудит свого магазину</a></div>
   </div>
 </section>
 
@@ -920,9 +959,8 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
         <div class="tile wide rv">
           <div class="t-top">
             <i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></i>
-            <b>Шлях покупця</b>
+            <b>Аналіз шляху покупця на сайті</b>
           </div>
-          <p class="journey"><em>головна</em><i>→</i><em>каталог</em><i>→</i><em>картка товару</em><i>→</i><em>кошик</em><i>→</i><em>оформлення</em></p>
           <span class="devices"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="10" rx="1.5"/><path d="M1.5 17.5h17"/><rect x="17.5" y="9" width="5" height="10" rx="1.2"/></svg>з телефона й компʼютера</span>
         </div>
         <div class="tile rv">
@@ -967,17 +1005,17 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
       <p class="sub">Аудит — перший крок. Якщо вирішите впроваджувати, ось із чим працює команда.</p>
     </div>
     <ul class="svc-grid">
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.2 10.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg></i><b>Магазин Shopify з нуля</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.9-.7-1.3-.7-2.1 0-.9.8-1.5 1.7-1.5H17a4 4 0 0 0 4-4C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></i><b>Дизайн магазину на замовлення</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4a2 2 0 1 0 0 4v4H3V9h4a2 2 0 1 1 0-4h2V3z"/><path d="M15 15h6v6h-6z"/></svg></i><b>Інтеграція додатків</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 14l4.5-4.5"/></svg></i><b>Оптимізація швидкості</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></i><b>SEO</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Підтримка магазину</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/></svg></i><b>Переїзд на Shopify</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4M12 20v-4M8 12H4M20 12h-4"/><circle cx="12" cy="12" r="4"/></svg></i><b>Автоматизація Shopify</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4l11 5V5L4 10z"/><path d="M15 9.5a3 3 0 0 1 0 5"/><path d="M7 14.5l1.5 5"/></svg></i><b>Реклама у Facebook</b></li>
-      <li class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg></i><b>SMM</b></li>
-      <li class="svc hl wide rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 12l2 2 4-4"/></svg></i><em>з нього починаємо</em><b>CRO та UX-аудит</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Розбираємо структуру, навігацію, картки товару, кошик і оформлення|Дивимося, де відвідувачі йдуть із сайту|Пропонуємо, як скоротити шлях до покупки|Звіт із пріоритетами й наступними кроками" class="svc hl wide rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/><path d="M8 12l2 2 4-4"/></svg></i><em>з нього починаємо</em><b>CRO та UX-аудит</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Уточнюємо цілі, аудиторію, функції й терміни|Готова тема або розробка з нуля|Дизайн, додатки, доставка, оплата й товари|Інструкції та супровід після запуску" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.2 10.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg></i><b>Магазин Shopify з нуля</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Аналіз бренду й аудиторії|Продумуємо шлях від входу до оформлення|Власний дизайн для телефона й компʼютера|Переносимо в робочу тему Shopify і тестуємо" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-.9-.7-1.3-.7-2.1 0-.9.8-1.5 1.7-1.5H17a4 4 0 0 0 4-4C21 6.8 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></i><b>Дизайн магазину на замовлення</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Підбираємо додатки: склад, доставка, підписки, відгуки, email|Налаштовуємо під ваші процеси|Інтегруємо з темою без конфліктів|Перевіряємо вплив на швидкість і оформлення" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4a2 2 0 1 0 0 4v4H3V9h4a2 2 0 1 1 0-4h2V3z"/><path d="M15 15h6v6h-6z"/></svg></i><b>Інтеграція додатків</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Шукаємо, що гальмує завантаження|Стискаємо зображення, вмикаємо lazy-load|Чистимо код і зайві скрипти|Окремо — швидкість на телефоні; звіт до/після" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 14l4.5-4.5"/></svg></i><b>Оптимізація швидкості</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Технічне SEO: швидкість, індексація, schema|Заголовки, мета й тексти під запити покупців|Посилання з профільних сайтів|Щомісячний звіт: позиції, трафік, продажі" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></i><b>SEO</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Швидко виправляємо баги й конфлікти теми та додатків|Безпечно оновлюємо додатки|Нові функції, секції й дизайн-правки|Регулярні міні-аудити" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></i><b>Підтримка магазину</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Клієнти, замовлення, товари, колекції, сторінки|Чистимо дані під структуру Shopify|Дизайн на новій платформі|Тести й запуск з мінімальним простоєм" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/></svg></i><b>Переїзд на Shopify</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Розбираємо процеси: замовлення, відправка, листи, склад|Shopify Flow, Klaviyo, CRM|Автолисти: статус замовлення, покинутий кошик, після покупки|Пояснюємо команді, як усе працює" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4M12 20v-4M8 12H4M20 12h-4"/><circle cx="12" cy="12" r="4"/></svg></i><b>Автоматизація Shopify</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Дослідження оферу й аудиторії|Воронка: охоплення → розгляд → покупка|Business Manager, піксель, події|Креативи, запуск, масштабування, звіти" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4l11 5V5L4 10z"/><path d="M15 9.5a3 3 0 0 1 0 5"/><path d="M7 14.5l1.5 5"/></svg></i><b>Реклама у Facebook</b></li>
+      <li tabindex="0" role="button" aria-haspopup="dialog" data-d="Голос бренду, аудиторія, платформи|Контент-план: пости, Reels, сторіз|Публікації й робота зі спільнотою|Щомісячна аналітика" class="svc rv"><i class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg></i><b>SMM</b></li>
     </ul>
   </div>
 </section>
@@ -1012,71 +1050,78 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 </section>
 
 <!-- REVIEWS -->
-<section class="sec paper" id="reviews" data-more="Читати далі" data-less="Згорнути" data-orig="Оригінал" data-back="Переклад">
+<section class="sec paper" id="reviews" data-more="Читати далі" data-less="Згорнути" data-orig="Переклад українською" data-back="Оригінал англійською">
   <div class="wrap">
     <div class="sec-head rv-head rv">
       <span class="eyebrow">Відгуки</span>
       <h2>5.0 на Upwork</h2>
       <p class="rv-sum"><span class="rv-st" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>8 відгуків · кожен 5.0</b></p>
-      <p class="sub">Відгуки клієнтів про роботу засновника MileDevs Євгенія.</p>
+      <p class="sub">Відгуки клієнтів MileDevs з Upwork — оригінальний текст.</p>
     </div>
     <div class="rv-slider" role="region" aria-roledescription="carousel" aria-label="Відгуки">
       <div class="rv-track" tabindex="0">
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="1 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>квіт. – лип. 2025</time></span>Shopify Website Development</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Роботу над сайтом виконано бездоганно. Навіть понад те, про що ми спочатку домовлялися. Євгеній проявив ініціативу й узявся за завдання, які формально не входили до його обовʼязків. Дуже цінуємо додаткові зусилля та професіоналізм.»</p></div><div class="q-en" lang="en" hidden><p>"The work on the website was done perfectly. Even beyond what we initially agreed on. Evgenii took initiative and handled tasks that weren’t technically part of his responsibility. Really appreciated the extra effort and professionalism."</p></div></blockquote>
-        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div><ul class="rv-tags"><li>Відданий якості</li><li>Орієнтований на рішення</li><li>Професіонал</li></ul>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · підтверджено клієнтом</p>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="1 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Website Development</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Apr 11, 2025 - Jul 17, 2025</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"The work on the website was done perfectly. Even beyond what we initially agreed on. […] Really appreciated the extra effort and professionalism."</p></div><div class="q-tx" lang="uk" hidden><p>«Роботу над сайтом виконано бездоганно. Навіть понад те, про що ми спочатку домовлялися. […] Дуже цінуємо додаткові зусилля та професіоналізм.»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
+        <p class="up-end">Endorsed by client</p>
+        <ul class="up-tags"><li>Committed to Quality</li><li>Solution Oriented</li><li>Professional</li></ul>
       </article>
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="2 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>липень 2025</time></span>Shopify Theme Development Expert Needed</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Євгеній дуже уважно поставився до моїх потреб. Після мого пояснення, що треба розробити на сайті, він від самого початку точно зрозумів, чого я хочу. Він дуже вправний у своїй справі, і я не можу нарадитися ним. Відтепер з будь-якою розробкою я звертатимуся саме до нього, і ви вчините нерозумно, якщо не зробите так само.»</p></div><div class="q-en" lang="en" hidden><p>"Evgenii was very attentive to my needs. I explained to him the development on my website and he knew exactly what I wanted from the beginning. He is very skilled at what he does and I couldn't recommend him enough. From this point on he is going to be my go to man for any development I need and you would be silly if you don't as well."</p></div></blockquote>
-        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="2 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Theme Development Expert Needed</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jul 21, 2025 - Jul 23, 2025</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"[…] He is very skilled at what he does and I couldn't recommend him enough. From this point on he is going to be my go to man for any development I need and you would be silly if you don't as well."</p></div><div class="q-tx" lang="uk" hidden><p>«[…] Він дуже вправний у своїй справі, і я не можу ним нахвалитися. Відтепер з будь-якою розробкою я звертатимуся саме до нього, і ви вчините нерозумно, якщо не зробите так само.»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
       </article>
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="3 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>січень 2024</time></span>Shopify Bug Fixing, New Feature Implementation and integrating third party app</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Співпраця з Євгенієм над нещодавнім проєктом була чудовою. Його професіоналізм, технічна майстерність і увага до деталей справді заслуговують на похвалу. Євгеній не лише виправив кілька секцій на нашій головній сторінці, а й бездоганно інтегрував секцію TikTok, що оновлюється в реальному часі, і це додало нашій платформі динаміки.</p><p>Найбільше вразило, як він створив добре структуроване мегаменю і для мобільної, і для десктопної версії. Це свідчить про глибоке розуміння найкращих практик. Комунікація впродовж усього проєкту була швидкою і зрозумілою.</p><p>Щиро рекомендую Євгенія спільноті Upwork — усім, хто шукає вправного й надійного фрилансера. Чекаю на подальшу співпрацю!»</p></div><div class="q-en" lang="en" hidden><p>"I had an outstanding experience working with Evgenii on a recent project. His professionalism, technical proficiency, and attention to detail were truly commendable. Evgenii not only addressed and fixed multiple sections on our homepage but also seamlessly integrated a real-time updating TikTok section, adding a dynamic touch to our platform.</p><p>What impressed me the most was his ability to create a well-structured megamenu for both mobile and desktop versions, demonstrating a deep understanding of best-practice principles. Communication was prompt and clear throughout the project.</p><p>I highly recommend Evgenii to the Upwork community for anyone seeking a skilled and reliable freelancer. Looking forward to future collaborations!"</p></div></blockquote>
-        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="3 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Bug Fixing, New Feature Implementation and integrating third party app</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jan 22, 2024 - Jan 22, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"[…] His professionalism, technical proficiency, and attention to detail were truly commendable. […] What impressed me the most was his ability to create a well-structured megamenu for both mobile and desktop versions, demonstrating a deep understanding of best-practice principles. Communication was prompt and clear throughout the project."</p></div><div class="q-tx" lang="uk" hidden><p>«[…] Його професіоналізм, технічна майстерність і увага до деталей справді заслуговують на похвалу. […] Найбільше мене вразило, як він створив добре структуроване мегаменю для мобільної й десктопної версій — це показує глибоке розуміння найкращих практик. Комунікація була швидкою і зрозумілою протягом усього проєкту.»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
       </article>
-      <article class="rvw rvw-l" aria-roledescription="slide" aria-label="4 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>вересень 2024</time></span>Shopify Product Page Customization - Liquid &amp; Javascript code</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Євгеній завершив доопрацювання мого Shopify вчасно, точно за ТЗ, і зробив чудову роботу. Ціна за роботу була цілком розумною, англійська — відмінна, і я однозначно рекомендую його та працюватиму з ним знову. Дякую, Євгенію, незабаром знову працюватимемо разом!»</p></div><div class="q-en" lang="en" hidden><p>"Evgenii finished my shopify customization on time, within spec, and did a great job. His price to do the job was very reasonable, English language skills are excellent, and I would absolutely recommend him and work with him again. Thanks Evgenii, we'll be working again in the near future!"</p></div></blockquote>
-        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · підтверджено клієнтом</p>
+      <article class="rvw up rvw-l" aria-roledescription="slide" aria-label="4 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify Product Page Customization - Liquid &amp; Javascript code</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Sep 10, 2024 - Sep 17, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"[…] His price to do the job was very reasonable, English language skills are excellent, and I would absolutely recommend him and work with him again. […]"</p></div><div class="q-tx" lang="uk" hidden><p>«[…] Ціна за роботу була цілком адекватною, англійська — відмінна, і я однозначно рекомендую його та працюватиму з ним знову. […]»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-more" aria-expanded="false" hidden>Читати далі</button><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
+        <p class="up-end">Endorsed by client</p>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="5 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>лют. – серп. 2025</time></span>Migration developer from Big Commerce to Shopify</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Талановитий розробник — дуже рекомендую»</p></div><div class="q-en" lang="en" hidden><p>"Talented developer - highly recommend"</p></div></blockquote>
-        <div class="rv-act"><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="5 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Migration developer from Big Commerce to Shopify</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Feb 25, 2025 - Aug 15, 2025</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"Talented developer - highly recommend"</p></div><div class="q-tx" lang="uk" hidden><p>«Талановитий розробник — дуже рекомендую»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="6 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>листопад 2024</time></span>Shopify theme developer needed</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Чудова робота, точність виконання і швидкість!»</p></div><div class="q-en" lang="en" hidden><p>"Great work, delivery accuracy, and speed!"</p></div></blockquote>
-        <div class="rv-act"><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div><ul class="rv-tags"><li>Відданий якості</li><li>Надійний</li></ul>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · підтверджено клієнтом</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="6 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify theme developer needed</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Nov 19, 2024 - Nov 20, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"Great work, delivery accuracy, and speed!"</p></div><div class="q-tx" lang="uk" hidden><p>«Чудова робота, точність виконання і швидкість!»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
+        <p class="up-end">Endorsed by client</p>
+        <ul class="up-tags"><li>Committed to Quality</li><li>Reliable</li></ul>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="7 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>лип. 2025 – трав. 2026</time></span>XML for B2B purposes</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Усе пройшло добре»</p></div><div class="q-en" lang="en" hidden><p>"Everything went well"</p></div></blockquote>
-        <div class="rv-act"><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div><ul class="rv-tags"><li>Зрозуміла комунікація</li></ul>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork · підтверджено клієнтом</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="7 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">XML for B2B purposes</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jul 11, 2025 - May 11, 2026</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"Everything went well"</p></div><div class="q-tx" lang="uk" hidden><p>«Усе пройшло добре»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
+        <p class="up-end">Endorsed by client</p>
+        <ul class="up-tags"><li>Clear Communicator</li></ul>
       </article>
-      <article class="rvw" aria-roledescription="slide" aria-label="8 / 8">
-        <div class="rv-top"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b></div>
-        <p class="rv-prj"><span>Проєкт · <time>черв. – серп. 2024</time></span>Shopify UNSEN theme customization</p>
-        <blockquote class="rv-q"><div class="q-tx" lang="uk"><p>«Чудова робота!»</p></div><div class="q-en" lang="en" hidden><p>"Great Work!"</p></div></blockquote>
-        <div class="rv-act"><p class="rv-tr">Переклад з англійської · <button type="button" class="rv-orig" aria-pressed="false">Оригінал</button></p></div>
-        <p class="rv-src"><svg aria-hidden="true"><use href="#i-chk"/></svg>Upwork</p>
+      <article class="rvw up" aria-roledescription="slide" aria-label="8 / 8">
+        <div class="up-hd"><span class="up-pf"><b>MileDevs</b><small>Shopify Selected Partner</small></span><span class="up-src">Upwork</span></div>
+        <h3 class="up-t">Shopify UNSEN theme customization</h3>
+        <div class="up-meta"><span class="rv-st" role="img" aria-label="Оцінка 5 з 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8L10 1.6z"/></svg></span><b>5.0</b><i aria-hidden="true"></i><time>Jun 6, 2024 - Aug 28, 2024</time><span class="up-sh" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.4"/><circle cx="7" cy="12" r="2.4"/><circle cx="17" cy="18" r="2.4"/><path d="M9.1 10.9l5.8-3.3M9.1 13.1l5.8 3.3"/></svg></span></div>
+        <blockquote class="rv-q up-q"><div class="q-en" lang="en"><p>"Great Work!"</p></div><div class="q-tx" lang="uk" hidden><p>«Чудова робота!»</p></div></blockquote>
+        <div class="rv-act"><button type="button" class="rv-orig up-tr" aria-pressed="false">Переклад українською</button></div>
       </article>
       </div>
       <div class="rv-nav" aria-label="Навігація відгуками">
@@ -1088,6 +1133,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     </div>
   </div>
 </section>
+<dialog class="sdlg" id="svcDlg" aria-labelledby="sdT"><div class="sd-in"><button type="button" class="sd-x" aria-label="Закрити"><svg aria-hidden="true"><use href="#i-x"/></svg></button><i class="sd-ic" aria-hidden="true"></i><h3 id="sdT"></h3><ul class="sd-l"></ul><a class="btn btn-indigo sd-cta" href="#order" data-src="Послуга" data-open="Послуга">Отримати безкоштовний аудит</a></div></dialog>
 <!-- /REVIEWS -->
 
 <!-- ORDER -->
@@ -1391,6 +1437,27 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
       .then(function(r){return r.json().then(function(j){return r.ok&&String(j.success)==='true'})}).catch(function(){return false});
     Promise.all([tgP,mailP]).then(function(a){done(a[0]||a[1]);});
   });
+})();
+</script>
+<script>
+/* 06.10: послуги — попап з описом */
+(function(){
+  var d=document.getElementById('svcDlg'); if(!d||!d.showModal) return;
+  var h=d.querySelector('h3'), ul=d.querySelector('.sd-l'), ic=d.querySelector('.sd-ic'), cta=d.querySelector('.sd-cta');
+  function show(li){
+    h.textContent=li.querySelector('b').textContent;
+    ic.innerHTML=li.querySelector('.ic').innerHTML;
+    ul.innerHTML=''; (li.getAttribute('data-d')||'').split('|').forEach(function(x){if(!x)return;var e=document.createElement('li');e.textContent=x;ul.appendChild(e)});
+    cta.setAttribute('data-open',cta.getAttribute('data-src')+': '+h.textContent);
+    d.showModal();
+  }
+  [].forEach.call(document.querySelectorAll('.svc[data-d]'),function(li){
+    li.addEventListener('click',function(){show(li)});
+    li.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(li)}});
+  });
+  d.querySelector('.sd-x').addEventListener('click',function(){d.close()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+  cta.addEventListener('click',function(){d.close()});
 })();
 </script>
 </body>
