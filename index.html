@@ -781,6 +781,23 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 @keyframes shpf{50%{transform:translateY(-5px)}}
 @media (max-width:374px){.shp{width:48px;height:48px;border-radius:15px}.shp svg{width:25px;height:25px}}
 @media (prefers-reduced-motion:reduce){.shp{animation:none}}
+
+/* === 06.10: founder block (за референсом «Хто проведе аудит») === */
+.fdr-in{display:grid;gap:26px;align-items:center}
+.fdr-ph{position:relative;margin:0;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#15161B;box-shadow:var(--sh-2)}
+.fdr-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.fdr-ph figcaption{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 10px;border-radius:999px;background:rgba(6,10,20,.82);color:#fff;font-size:12.5px;font-weight:800;letter-spacing:.06em;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.fdr-ph figcaption i{width:16px;height:16px;border-radius:50%;background:#95BF47;box-shadow:0 0 0 3px rgba(149,191,71,.25)}
+.fdr-tx h2{font-size:clamp(32px,8.4vw,54px);margin-top:10px}
+.fdr-role{margin-top:8px;font-size:16px;font-weight:700;color:var(--muted)}
+.fdr-st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:22px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+.fdr-st div{padding:18px 16px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fdr-st div:nth-child(2n){border-right:0}.fdr-st div:nth-child(n+3){border-bottom:0}
+.fdr-st b{display:block;font-size:clamp(28px,7.4vw,44px);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--text)}
+.fdr-st b mark{padding:0 6px;border-radius:6px;background:var(--lav);color:var(--indigo)}
+.fdr-st span{display:block;margin-top:8px;font-size:13px;line-height:1.4;font-weight:600;color:var(--muted)}
+@media (max-width:640px){.fdr-ph{aspect-ratio:1/1}.fdr-ph img{object-position:50% 22%}}
+@media (min-width:900px){.fdr-in{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:56px}.fdr-st div{padding:24px 26px}.fdr-st span{font-size:14px}}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -1135,6 +1152,19 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 </section>
 <dialog class="sdlg" id="svcDlg" aria-labelledby="sdT"><div class="sd-in"><button type="button" class="sd-x" aria-label="Закрити"><svg aria-hidden="true"><use href="#i-x"/></svg></button><i class="sd-ic" aria-hidden="true"></i><h3 id="sdT"></h3><ul class="sd-l"></ul><a class="btn btn-indigo sd-cta" href="#order" data-src="Послуга" data-open="Послуга">Отримати безкоштовний аудит</a></div></dialog>
 <!-- /REVIEWS -->
+
+<!-- FOUNDER -->
+<section class="sec" id="founder">
+  <div class="wrap fdr-in">
+    <figure class="fdr-ph rv"><img src="img/founder.webp" width="720" height="900" loading="lazy" alt="Євгеній Мілевич, засновник MileDevs"><figcaption><i aria-hidden="true"></i>MILEDEVS</figcaption></figure>
+    <div class="fdr-tx rv">
+      <span class="eyebrow">Хто проведе ваш CRO-аудит</span>
+      <h2>Євгеній Мілевич</h2>
+      <p class="fdr-role">Засновник · MileDevs</p>
+      <div class="fdr-st"><div><b>7+ <mark>років</mark></b><span>тільки з Shopify</span></div><div><b>300+</b><span>проєктів на Shopify</span></div><div><b>5.0</b><span>8 відгуків на Upwork</span></div><div><b>Selected</b><span>Shopify Partner</span></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- ORDER -->
 <section class="final" id="order">
