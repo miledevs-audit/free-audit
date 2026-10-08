@@ -1067,6 +1067,13 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
   #cases .cx-grid::-webkit-scrollbar{display:none}
   #cases .cx-card{scroll-snap-align:start}
 }
+
+/* 08.10 (12): "report example" note on the right with a curved arrow to the phone */
+.hv-note{position:absolute;z-index:3;top:58px;right:max(14px,calc(50% - 196px));display:flex;flex-direction:column;align-items:flex-end;color:var(--lav-3);pointer-events:none;animation:rise 1s var(--ease) .6s both}
+.hv-note b{display:block;padding-right:2px;font-size:15px;font-weight:800;line-height:1.2;letter-spacing:.01em;color:#fff;transform:rotate(-4deg)}
+.hv-arrow{display:block;width:96px;height:auto;margin:4px 34px 0 0}
+@media (max-width:640px){.hv-note{top:44px;right:14px}.hv-note b{font-size:14px}.hv-arrow{width:clamp(96px,30vw,118px);margin-right:30px}}
+@media (min-width:1040px){.hv-note{top:96px;right:24px}.hv-note b{font-size:18px}.hv-arrow{width:136px;margin-right:60px}}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -1133,7 +1140,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 
     <div class="hero-vis" aria-hidden="true">
       <div class="halo"></div>
-      <span class="hv-label"><svg><use href="#i-chk"/></svg>Ваш звіт</span>
+      <span class="hv-note"><b>Приклад звіту</b><svg class="hv-arrow" viewBox="0 0 110 74" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M100 4C104 34 76 62 16 60"/><path d="M28 50L15 60L29 68"/></svg></span>
       <div class="phone hv-phone">
         <div class="scr">
           <div class="island"></div>
@@ -1202,6 +1209,25 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     <div class="cmp-foot rv"><a class="btn btn-indigo" href="#order" data-open="Приклад аудиту">Хочу такий аудит свого магазину</a></div>
   </div>
 </section>
+
+<!-- PROOF -->
+<section class="pf" id="proof">
+  <div class="wrap">
+    <span class="eyebrow">Кейс · до / після</span>
+    <h2>Потягніть і порівняйте</h2>
+    <div class="pf-tabs" role="tablist" hidden></div>
+    <div class="pf-cmp rv" id="pfCmp">
+      <div class="pf-l pf-b"><span class="pf-k">До</span><b>$383 тис.</b><span class="pf-c">продажі за 90 днів</span><i class="pf-bars" aria-hidden="true"><em style="height:26%"></em><em style="height:22%"></em><em style="height:30%"></em><em style="height:28%"></em></i></div>
+      <div class="pf-l pf-a" aria-hidden="true"><span class="pf-k">Після</span><b>$517 тис.</b><span class="pf-c">продажі за 90 днів</span><i class="pf-bars" aria-hidden="true"><em style="height:42%"></em><em style="height:58%"></em><em style="height:74%"></em><em style="height:96%"></em></i></div>
+      <span class="pf-h" aria-hidden="true"><i>⇆</i></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Порівняти до і після">
+    </div>
+    <div class="pf-card rv"><span class="pf-tag">Розробка магазину · дизайн</span><h3>Магазин дитячих електромобілів на Shopify</h3><dl class="pf-rows"><div><dt>Продажі</dt><dd class="up">+35 %</dd></div><div><dt>Середній чек</dt><dd class="up">+42 %<small>$303 → $430</small></dd></div><div><dt>Валові продажі</dt><dd class="up">+52 %</dd></div><div><dt>Період</dt><dd>90 днів<small>проти попередніх 90</small></dd></div></dl>
+      <button type="button" class="pf-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Скрін із Shopify Analytics</button></div>
+  </div>
+</section>
+<script type="application/json" id="pfData">[{"tab": "Дитячі електромобілі", "vb": "$383 тис.", "va": "$517 тис.", "cap": "продажі за 90 днів", "tag": "Розробка магазину · дизайн", "title": "Магазин дитячих електромобілів на Shopify", "rows": [["Продажі", "+35 %", ""], ["Середній чек", "+42 %", "$303 → $430"], ["Валові продажі", "+52 %", ""], ["Період", "90 днів", "проти попередніх 90"]], "img": "img/proof-kids.webp", "pcap": "Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025"}]</script>
+<dialog class="pfdlg" id="pfDlg" aria-label="Скрін із Shopify Analytics"><img src="img/proof-kids.webp" width="1280" height="1044" loading="lazy" alt="Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025"><p>Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025</p><button type="button" class="sd-x" aria-label="Закрити"><svg aria-hidden="true"><use href="#i-x"/></svg></button></dialog>
 
 <!-- FOR WHOM -->
 <section class="sec paper" id="who">
@@ -1323,24 +1349,6 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
 <script type="application/json" id="cxData">[{"img": "img/case-lunesi.webp", "title": "LUNESI", "desc": "Преміальний бренд догляду за волоссям. Зробили магазин з нуля, який продає у 41 країну Європи: британці бачать ціни у фунтах, решта — в євро, сайт говорить 6 мовами, а доставку й ПДВ рахує сам.", "stats": [["+35 %", "конверсії за перший місяць"], ["41", "країна Європи з одного магазину"]], "bul": ["Вітрини для UK і ЄС: ціни у фунтах і євро, вибір із 6 мов", "Безкоштовна доставка для кожного ринку: від 90 € у ЄС і від £120 у UK", "Квіз для підбору догляду", "Набори товарів і список очікування", "Доставка Royal Mail і DHL з автоматичним розрахунком і ПДВ"], "niche": "Догляд за волоссям · Shopify", "meta": [["Задача", "Магазин під ключ"], ["Термін", "25–35 робочих днів"], ["Послуги", "Магазин з нуля · Індивідуальний дизайн · Інтеграція застосунків"]], "quote": "Ми в захваті від результату LUNESI! Ви зробили все на 100 %: мультимовність для UK і Європи працює бездоганно, логістика налаштована як годинник, а конверсія за перший місяць зросла на 35 %. Покупцям подобається платити у своїй валюті й те, як швидко працює сайт."}, {"img": "img/case-joyfolie.webp", "title": "JOYFOLIE", "desc": "Американський бохо-бренд одягу й взуття для жінок і дівчаток, з 2011 року, понад 100 магазинів-партнерів. Зробили бутиковий магазин: обидві лінії в одному кошику, а в розділі Mommy & Me мама й донька підбирають однакові образи.", "stats": [["+18 %", "продажів за місяць"], ["1 268", "товарів в одному каталозі"]], "bul": ["Розділ Mommy & Me: однакові образи для мами й доньки", "Передзамовлення з датою відправки", "Таблиці розмірів і швидкий перегляд", "Доставка по США через USPS"], "niche": "Жіночий і дитячий одяг · Shopify", "meta": [["Задача", "Бутиковий магазин"], ["Термін", "25–35 робочих днів"], ["Послуги", "Магазин з нуля · Індивідуальний дизайн"]], "quote": "Дякуємо за роботу! Ви чудова команда — запустили сайт JOYFOLIE вчасно й на найвищому рівні. Shopify інтегровано бездоганно, звʼязки з Faire, Amazon і Pre-Loved працюють ідеально, а бохо-дизайн для жінок і дітей вражає. Рекомендуємо всім!"}, {"img": "img/case-carbon.webp", "title": "CARBON", "desc": "Бренд карбонових автозапчастин, який у 2018 році заснували автоентузіасти. Зробили магазин, де покупець обирає марку, модель і рік свого авто — і бачить тільки деталі, що підходять.", "stats": [["+28 %", "продажів за 2 місяці"], ["23", "марки авто в пошуку"]], "bul": ["Пошук за маркою авто: 23 марки від BMW і Porsche до McLaren і Tesla", "Меню «Select Your Vehicle» на кожній сторінці", "Фільтри й перевірка сумісності деталей", "«+ Quick add» на кожній картці"], "niche": "Автозапчастини · Shopify", "meta": [["Задача", "Магазин під ключ"], ["Термін", "25–35 робочих днів"], ["Послуги", "Магазин з нуля · Індивідуальний дизайн"]], "quote": "Дуже задоволені нашим магазином CARBON! Карбонові деталі показані на висоті, глобальні продажі й консультації покупців працюють. Продажі +28 % за два місяці — рекомендуємо!"}, {"img": "img/case-fugazzi.webp", "title": "FUGAZZI", "desc": "Амстердамський парфумерний дім із бутиками в Амстердамі й Токіо. Зробили дизайн і розробку магазину: сторінка кожного аромату як «паспорт», набір пробників 6 × 2 мл і ціни в місцевій валюті для 37 країн.", "stats": [["+21 %", "продажів за місяць"], ["6 × 2 мл", "набір пробників"]], "bul": ["Конструктор набору пробників: 6 ароматів по 2 мл", "Сторінка аромату як «паспорт»: сімейство, інтенсивність, шлейф", "Мова й валюта в шапці: Європа, UK, США, Канада, Австралія, Азія", "Англійська й іспанська версії сайту"], "niche": "Нішеві парфуми · Shopify", "meta": [["Задача", "Дизайн і розробка магазину"], ["Термін", "25–35 робочих днів"], ["Послуги", "Магазин з нуля · Індивідуальний дизайн"]], "quote": null}, {"img": "img/case-rinfit.webp", "title": "RINFIT", "desc": "Бренд силіконових обручок для активного життя, з 2015 року, понад 30 кольорів. Перенесли новий дизайн на живий сайт до пікселя, додали 8 фільтрів і Quick Buy — покупець одразу бачить каблучки свого розміру й кольору.", "stats": [["+23 %", "продажів за місяць"], ["124", "товари з фільтром розміру й кольору"]], "bul": ["8 фільтрів каталогу: ціна, жіночий і чоловічий розмір, колір", "Quick Buy прямо з картки товару", "Калькулятор розміру каблучки", "Прибрали горизонтальний скрол і зсуви верстки на всіх пристроях"], "niche": "Силіконові каблучки · Shopify", "meta": [["Задача", "Доопрацювання теми до пікселя"], ["Послуги", "Індивідуальний дизайн · Оптимізація швидкості"]], "quote": "Новий сайт — саме те, що ми хотіли: швидкий, гарний і заточений під продаж каблучок. Ви точно передали нашу філософію активного життя й 30+ кольорів силікону, покупцям дуже зручно. Результат перевершив очікування — дякуємо, рекомендуємо!"}, {"img": "img/case-neom.webp", "title": "NEOM", "desc": "Лондонський wellbeing-бренд натуральних ароматів: дифузори, ефірні олії, свічки. Зробили конструктор Build Your Pod — покупець обирає дифузор, олії й аксесуари, бере підписку −10 % і кладе весь набір у кошик одним кліком.", "stats": [["+12 %", "продажів за місяць"], ["1 клік", "і весь набір у кошику"]], "bul": ["Покроковий вибір: дифузор → олії → аксесуари, вигода до 20 %", "Підписка −10 % з доставкою кожні 4, 8 або 12 тижнів", "Липкий підсумок: вибрані товари, вигода, бонуси й сума", "Команда NEOM сама додає нові набори в редакторі теми"], "niche": "Wellbeing і аромати для дому · Shopify", "meta": [["Задача", "Конструктор наборів"], ["Послуги", "Індивідуальний дизайн"]], "quote": null}]</script>
 <dialog class="cdlg" id="cxDlg" aria-labelledby="cdT"><button type="button" class="sd-x" aria-label="Закрити"><svg aria-hidden="true"><use href="#i-x"/></svg></button><span class="cd-img"><img width="720" height="480" alt=""></span><div class="cd-in"><span class="cx-niche cd-niche"></span><h3 id="cdT"></h3><p></p><dl class="cx-meta cd-meta"></dl><h4>Що вміє магазин</h4><ul class="sd-l"></ul></div><div class="cd-side"><div class="cd-st"></div><blockquote class="cd-q" hidden><p></p><span>Відгук клієнта</span></blockquote></div><div class="cd-foot"><a class="btn btn-indigo sd-cta cd-cta" href="#order" data-src="Кейс" data-open="Кейс">Хочу такий самий магазин</a></div></dialog>
 
-<!-- PROOF -->
-<section class="pf" id="proof">
-  <div class="wrap">
-    <span class="eyebrow">Кейс · до / після</span>
-    <h2>Потягніть і порівняйте</h2>
-    <div class="pf-tabs" role="tablist" hidden></div>
-    <div class="pf-cmp rv" id="pfCmp">
-      <div class="pf-l pf-b"><span class="pf-k">До</span><b>$383 тис.</b><span class="pf-c">продажі за 90 днів</span><i class="pf-bars" aria-hidden="true"><em style="height:26%"></em><em style="height:22%"></em><em style="height:30%"></em><em style="height:28%"></em></i></div>
-      <div class="pf-l pf-a" aria-hidden="true"><span class="pf-k">Після</span><b>$517 тис.</b><span class="pf-c">продажі за 90 днів</span><i class="pf-bars" aria-hidden="true"><em style="height:42%"></em><em style="height:58%"></em><em style="height:74%"></em><em style="height:96%"></em></i></div>
-      <span class="pf-h" aria-hidden="true"><i>⇆</i></span>
-      <input type="range" min="0" max="100" value="50" aria-label="Порівняти до і після">
-    </div>
-    <div class="pf-card rv"><span class="pf-tag">Розробка магазину · дизайн</span><h3>Магазин дитячих електромобілів на Shopify</h3><dl class="pf-rows"><div><dt>Продажі</dt><dd class="up">+35 %</dd></div><div><dt>Середній чек</dt><dd class="up">+42 %<small>$303 → $430</small></dd></div><div><dt>Валові продажі</dt><dd class="up">+52 %</dd></div><div><dt>Період</dt><dd>90 днів<small>проти попередніх 90</small></dd></div></dl>
-      <button type="button" class="pf-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Скрін із Shopify Analytics</button></div>
-  </div>
-</section>
-<script type="application/json" id="pfData">[{"tab": "Дитячі електромобілі", "vb": "$383 тис.", "va": "$517 тис.", "cap": "продажі за 90 днів", "tag": "Розробка магазину · дизайн", "title": "Магазин дитячих електромобілів на Shopify", "rows": [["Продажі", "+35 %", ""], ["Середній чек", "+42 %", "$303 → $430"], ["Валові продажі", "+52 %", ""], ["Період", "90 днів", "проти попередніх 90"]], "img": "img/proof-kids.webp", "pcap": "Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025"}]</script>
-<dialog class="pfdlg" id="pfDlg" aria-label="Скрін із Shopify Analytics"><img src="img/proof-kids.webp" width="1280" height="1044" loading="lazy" alt="Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025"><p>Shopify Analytics · 19.06–17.09.2025 проти 20.03–18.06.2025</p><button type="button" class="sd-x" aria-label="Закрити"><svg aria-hidden="true"><use href="#i-x"/></svg></button></dialog>
 
 
 

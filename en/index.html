@@ -1067,6 +1067,13 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
   #cases .cx-grid::-webkit-scrollbar{display:none}
   #cases .cx-card{scroll-snap-align:start}
 }
+
+/* 08.10 (12): "report example" note on the right with a curved arrow to the phone */
+.hv-note{position:absolute;z-index:3;top:58px;right:max(14px,calc(50% - 196px));display:flex;flex-direction:column;align-items:flex-end;color:var(--lav-3);pointer-events:none;animation:rise 1s var(--ease) .6s both}
+.hv-note b{display:block;padding-right:2px;font-size:15px;font-weight:800;line-height:1.2;letter-spacing:.01em;color:#fff;transform:rotate(-4deg)}
+.hv-arrow{display:block;width:96px;height:auto;margin:4px 34px 0 0}
+@media (max-width:640px){.hv-note{top:44px;right:14px}.hv-note b{font-size:14px}.hv-arrow{width:clamp(96px,30vw,118px);margin-right:30px}}
+@media (min-width:1040px){.hv-note{top:96px;right:24px}.hv-note b{font-size:18px}.hv-arrow{width:136px;margin-right:60px}}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
@@ -1133,7 +1140,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
 
     <div class="hero-vis" aria-hidden="true">
       <div class="halo"></div>
-      <span class="hv-label"><svg><use href="#i-chk"/></svg>Your report</span>
+      <span class="hv-note"><b>Report example</b><svg class="hv-arrow" viewBox="0 0 110 74" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M100 4C104 34 76 62 16 60"/><path d="M28 50L15 60L29 68"/></svg></span>
       <div class="phone hv-phone">
         <div class="scr">
           <div class="island"></div>
@@ -1202,6 +1209,25 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
     <div class="cmp-foot rv"><a class="btn btn-indigo" href="#order" data-open="Audit example">I want this for my store</a></div>
   </div>
 </section>
+
+<!-- PROOF -->
+<section class="pf" id="proof">
+  <div class="wrap">
+    <span class="eyebrow">Case · before / after</span>
+    <h2>Drag to compare</h2>
+    <div class="pf-tabs" role="tablist" hidden></div>
+    <div class="pf-cmp rv" id="pfCmp">
+      <div class="pf-l pf-b"><span class="pf-k">Before</span><b>$383K</b><span class="pf-c">sales in 90 days</span><i class="pf-bars" aria-hidden="true"><em style="height:26%"></em><em style="height:22%"></em><em style="height:30%"></em><em style="height:28%"></em></i></div>
+      <div class="pf-l pf-a" aria-hidden="true"><span class="pf-k">After</span><b>$517K</b><span class="pf-c">sales in 90 days</span><i class="pf-bars" aria-hidden="true"><em style="height:42%"></em><em style="height:58%"></em><em style="height:74%"></em><em style="height:96%"></em></i></div>
+      <span class="pf-h" aria-hidden="true"><i>⇆</i></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+    </div>
+    <div class="pf-card rv"><span class="pf-tag">Store build · design</span><h3>Kids’ electric ride-on store on Shopify</h3><dl class="pf-rows"><div><dt>Sales</dt><dd class="up">+35%</dd></div><div><dt>Average order value</dt><dd class="up">+42%<small>$303 → $430</small></dd></div><div><dt>Gross sales</dt><dd class="up">+52%</dd></div><div><dt>Period</dt><dd>90 days<small>vs the previous 90</small></dd></div></dl>
+      <button type="button" class="pf-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Shopify Analytics screenshot</button></div>
+  </div>
+</section>
+<script type="application/json" id="pfData">[{"tab": "Kids’ ride-ons", "vb": "$383K", "va": "$517K", "cap": "sales in 90 days", "tag": "Store build · design", "title": "Kids’ electric ride-on store on Shopify", "rows": [["Sales", "+35%", ""], ["Average order value", "+42%", "$303 → $430"], ["Gross sales", "+52%", ""], ["Period", "90 days", "vs the previous 90"]], "img": "../img/proof-kids.webp", "pcap": "Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025"}]</script>
+<dialog class="pfdlg" id="pfDlg" aria-label="Shopify Analytics screenshot"><img src="../img/proof-kids.webp" width="1280" height="1044" loading="lazy" alt="Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025"><p>Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025</p><button type="button" class="sd-x" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button></dialog>
 
 <!-- FOR WHOM -->
 <section class="sec paper" id="who">
@@ -1323,24 +1349,6 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
 <script type="application/json" id="cxData">[{"img": "../img/case-lunesi.webp", "title": "LUNESI", "desc": "A premium hair-care brand. We built the store from scratch to sell to 41 European countries: UK shoppers see pounds, everyone else euros, the site speaks 6 languages and calculates shipping and VAT on its own.", "stats": [["+35%", "conversion in the first month"], ["41", "European countries from one store"]], "bul": ["UK and EU storefronts: prices in pounds and euros, a 6-language picker", "Free delivery per market: over €90 in the EU and over £120 in the UK", "A hair-care quiz", "Product bundles and a waitlist", "Royal Mail and DHL shipping with automatic rates and VAT"], "niche": "Hair care · Shopify", "meta": [["Task", "Full store build"], ["Timeline", "25–35 business days"], ["Services", "Store setup from scratch · Custom store design · App integration"]], "quote": "I’m absolutely thrilled with the LUNESI results! Our team launched premium hair care on Shopify, and you nailed it 100% — multi-language support for the UK and Europe works flawlessly, logistics integrated like clockwork, and conversions jumped 35% in the first month. Customers rave about the ease of multi-currency payments and lightning-fast load times."}, {"img": "../img/case-joyfolie.webp", "title": "JOYFOLIE", "desc": "An American boho clothing and footwear brand for women and girls, founded in 2011, with 100+ retail partners. We built a boutique store: both lines in one cart, and a Mommy & Me section where mom and daughter pick matching looks.", "stats": [["+18%", "sales in a month"], ["1,268", "products in one catalog"]], "bul": ["Mommy & Me section with matching looks", "Pre-orders with a ship date", "Size charts and quick view", "US shipping via USPS"], "niche": "Women’s & girls’ fashion · Shopify", "meta": [["Task", "Boutique e-commerce store"], ["Timeline", "25–35 business days"], ["Services", "Store setup from scratch · Custom store design"]], "quote": "Thank you for your work! You are a great team that helped us launch the JOYFOLIE website on time and at the highest level. Shopify was integrated flawlessly, multichannel connections with Faire, Amazon and Pre-Loved work perfectly, and the boho design for women and children is impressive. We recommend you to everyone!"}, {"img": "../img/case-carbon.webp", "title": "CARBON", "desc": "A carbon fiber auto parts brand founded in 2018 by car enthusiasts. We built a store where shoppers pick their car’s make, model and year — and see only the parts that fit.", "stats": [["+28%", "sales in two months"], ["23", "car makes in search"]], "bul": ["Shop by car make: 23 makes from BMW and Porsche to McLaren and Tesla", "“Select Your Vehicle” menu on every page", "Filters and fitment checks", "“+ Quick add” on every card"], "niche": "Automotive parts · Shopify", "meta": [["Task", "Full store build"], ["Timeline", "25–35 business days"], ["Services", "Store setup from scratch · Custom store design"]], "quote": "Thrilled with our CARBON Shopify store! The team nailed the high-performance carbon fiber parts display, global e-commerce and expert shopping assistance. Sales up 28% in two months — highly recommend!"}, {"img": "../img/case-fugazzi.webp", "title": "FUGAZZI", "desc": "An Amsterdam perfume house with flagship stores in Amsterdam and Tokyo. We designed and built the store: a “passport” page for every scent, a 6 × 2 ml sample set and local-currency prices for 37 countries.", "stats": [["+21%", "sales in a month"], ["6 × 2 ml", "sample set"]], "bul": ["Sample-set builder: six 2 ml scents", "Each perfume page reads like a scent card: family, intensity, sillage", "Language and currency picker: Europe, UK, US, Canada, Australia, Asia", "English and Spanish versions"], "niche": "Niche fragrance · Shopify", "meta": [["Task", "Store design and build"], ["Timeline", "25–35 business days"], ["Services", "Store setup from scratch · Custom store design"]], "quote": null}, {"img": "../img/case-rinfit.webp", "title": "RINFIT", "desc": "A silicone wedding ring brand for active lifestyles, founded in 2015, in 30+ colors. We built the new design on the live store pixel-perfect and added 8 filters and Quick Buy — shoppers instantly see rings in their size and color.", "stats": [["+23%", "sales in a month"], ["124", "products with size and color filters"]], "bul": ["8 catalog filters: price, women’s and men’s size, color", "Quick Buy straight from the product card", "Ring size calculator", "No horizontal scroll or layout shifts on any device"], "niche": "Silicone rings · Shopify", "meta": [["Task", "Pixel-perfect theme refinement"], ["Services", "Custom store design · Performance optimization"]], "quote": "Our new website is exactly what we were looking for: fast, beautiful and optimized for ring sales. You perfectly captured our active lifestyle philosophy and 30+ silicone colors, making it super user-friendly for customers. The result exceeded expectations — thank you, we highly recommend the agency!"}, {"img": "../img/case-neom.webp", "title": "NEOM", "desc": "A London wellbeing brand of natural fragrances: diffusers, essential oils, candles. We built the Build Your Pod bundle builder — shoppers pick a diffuser, oils and accessories, subscribe for 10% off and add the whole pack to the bag in one click.", "stats": [["+12%", "sales in a month"], ["1 click", "and the whole set is in the cart"]], "bul": ["Step-by-step: diffuser → oils → accessories, saving up to 20%", "Subscribe & Save 10% with delivery every 4, 8 or 12 weeks", "Sticky summary: picks, saving, loyalty points and total", "NEOM’s team adds new packs in the theme editor"], "niche": "Wellbeing & home fragrance · Shopify", "meta": [["Task", "Custom bundle builder"], ["Services", "Custom store design"]], "quote": null}]</script>
 <dialog class="cdlg" id="cxDlg" aria-labelledby="cdT"><button type="button" class="sd-x" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button><span class="cd-img"><img width="720" height="480" alt=""></span><div class="cd-in"><span class="cx-niche cd-niche"></span><h3 id="cdT"></h3><p></p><dl class="cx-meta cd-meta"></dl><h4>What the store can do</h4><ul class="sd-l"></ul></div><div class="cd-side"><div class="cd-st"></div><blockquote class="cd-q" hidden><p></p><span>Client testimonial</span></blockquote></div><div class="cd-foot"><a class="btn btn-indigo sd-cta cd-cta" href="#order" data-src="Case" data-open="Case">I want a store like this</a></div></dialog>
 
-<!-- PROOF -->
-<section class="pf" id="proof">
-  <div class="wrap">
-    <span class="eyebrow">Case · before / after</span>
-    <h2>Drag to compare</h2>
-    <div class="pf-tabs" role="tablist" hidden></div>
-    <div class="pf-cmp rv" id="pfCmp">
-      <div class="pf-l pf-b"><span class="pf-k">Before</span><b>$383K</b><span class="pf-c">sales in 90 days</span><i class="pf-bars" aria-hidden="true"><em style="height:26%"></em><em style="height:22%"></em><em style="height:30%"></em><em style="height:28%"></em></i></div>
-      <div class="pf-l pf-a" aria-hidden="true"><span class="pf-k">After</span><b>$517K</b><span class="pf-c">sales in 90 days</span><i class="pf-bars" aria-hidden="true"><em style="height:42%"></em><em style="height:58%"></em><em style="height:74%"></em><em style="height:96%"></em></i></div>
-      <span class="pf-h" aria-hidden="true"><i>⇆</i></span>
-      <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
-    </div>
-    <div class="pf-card rv"><span class="pf-tag">Store build · design</span><h3>Kids’ electric ride-on store on Shopify</h3><dl class="pf-rows"><div><dt>Sales</dt><dd class="up">+35%</dd></div><div><dt>Average order value</dt><dd class="up">+42%<small>$303 → $430</small></dd></div><div><dt>Gross sales</dt><dd class="up">+52%</dd></div><div><dt>Period</dt><dd>90 days<small>vs the previous 90</small></dd></div></dl>
-      <button type="button" class="pf-proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Shopify Analytics screenshot</button></div>
-  </div>
-</section>
-<script type="application/json" id="pfData">[{"tab": "Kids’ ride-ons", "vb": "$383K", "va": "$517K", "cap": "sales in 90 days", "tag": "Store build · design", "title": "Kids’ electric ride-on store on Shopify", "rows": [["Sales", "+35%", ""], ["Average order value", "+42%", "$303 → $430"], ["Gross sales", "+52%", ""], ["Period", "90 days", "vs the previous 90"]], "img": "../img/proof-kids.webp", "pcap": "Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025"}]</script>
-<dialog class="pfdlg" id="pfDlg" aria-label="Shopify Analytics screenshot"><img src="../img/proof-kids.webp" width="1280" height="1044" loading="lazy" alt="Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025"><p>Shopify Analytics · Jun 19 – Sep 17, 2025 vs Mar 20 – Jun 18, 2025</p><button type="button" class="sd-x" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button></dialog>
 
 
 
