@@ -1096,6 +1096,26 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
   .cd-foot::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:64px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 85%);pointer-events:none}
   .cd-side{padding-bottom:8px}
 }
+
+/* 08.10 (15): desktop — notes outside the phones with curved arrows */
+.co{display:none}
+@media (min-width:1320px){
+  .ba{max-width:1040px;padding:30px 40px 34px}
+  .ba-win{max-width:1040px}
+  .ba .phone{--pw:262px}
+  .ba-col{position:relative}
+  .ba .mk b,.ba .below{display:none}
+  .co{position:absolute;z-index:3;display:flex;align-items:flex-end;gap:6px;transform:translateY(-100%);opacity:0;transition:opacity .4s var(--ease)}
+  .co.on{opacity:1}
+  .co b{padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:800;line-height:1.2;white-space:nowrap;color:#fff;box-shadow:0 8px 18px -8px rgba(6,10,20,.4)}
+  .co-ar{flex:none;width:62px;height:auto;margin-bottom:-12px}
+  .bad-ph .co{right:calc(50% + 131px + 6px)}
+  .bad-ph .co b{background:var(--red-2)}
+  .bad-ph .co-ar{color:var(--red-2)}
+  .good-ph .co{left:calc(50% + 131px + 6px);flex-direction:row-reverse}
+  .good-ph .co b{background:var(--green-2)}
+  .good-ph .co-ar{color:var(--green-2);transform:scaleX(-1)}
+}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -1198,7 +1218,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
     </div>
 
     <div class="ba rv" id="ba">
-      <figure class="ba-col bad-ph"><span class="ba-tag bad"><i><svg aria-hidden="true"><use href="#i-x"/></svg></i>До</span>
+      <figure class="ba-col bad-ph"><span class="co" data-for=".m1" aria-hidden="true"><b>Назва над фото</b><svg class="co-ar" viewBox="0 0 70 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9C24 2 46 6 64 19"/><path d="M53 19.5L64 19L61 8.5"/></svg></span><span class="co" data-for=".m2" aria-hidden="true"><b>і ще раз — під фото</b><svg class="co-ar" viewBox="0 0 70 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9C24 2 46 6 64 19"/><path d="M53 19.5L64 19L61 8.5"/></svg></span><span class="co" data-for="y:0.955" aria-hidden="true"><b>Ціна — нижче екрана</b><svg class="co-ar" viewBox="0 0 70 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9C24 2 46 6 64 19"/><path d="M53 19.5L64 19L61 8.5"/></svg></span><span class="ba-tag bad"><i><svg aria-hidden="true"><use href="#i-x"/></svg></i>До</span>
             <div class="phone">
               <div class="scr">
                 <div class="island"></div>
@@ -1213,7 +1233,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
               </div>
             </div>
       </figure>
-      <figure class="ba-col good-ph"><span class="ba-tag good"><i><svg aria-hidden="true"><use href="#i-chk"/></svg></i>Після</span>
+      <figure class="ba-col good-ph"><span class="co" data-for="y:0.6" aria-hidden="true"><b>Назва — один раз</b><svg class="co-ar" viewBox="0 0 70 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9C24 2 46 6 64 19"/><path d="M53 19.5L64 19L61 8.5"/></svg></span><span class="co" data-for=".m3" aria-hidden="true"><b>Ціну видно одразу</b><svg class="co-ar" viewBox="0 0 70 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9C24 2 46 6 64 19"/><path d="M53 19.5L64 19L61 8.5"/></svg></span><span class="ba-tag good"><i><svg aria-hidden="true"><use href="#i-chk"/></svg></i>Після</span>
             <div class="phone">
               <div class="scr">
                 <div class="island"></div>
@@ -1861,6 +1881,23 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   d.querySelector('.sd-x').addEventListener('click',function(){d.close()});
   d.addEventListener('click',function(e){if(e.target===d)d.close()});
   cta.addEventListener('click',function(){d.close()});
+})();
+</script>
+
+<script>
+/* 08.10 (15): ставимо виноски навпроти позначок на скріні (тільки десктоп) */
+(function(){
+  var B=document.getElementById('ba'); if(!B) return;
+  function place(){
+    if(innerWidth<1320) return;
+    [].forEach.call(B.querySelectorAll('.co'),function(c){
+      var col=c.closest('.ba-col'), shot=col.querySelector('.shot'), f=c.getAttribute('data-for'), cr=col.getBoundingClientRect(), y;
+      if(f.indexOf('y:')===0){var sr=shot.getBoundingClientRect(); y=sr.top+sr.height*parseFloat(f.slice(2));}
+      else{var t=shot.querySelector(f).getBoundingClientRect(); y=t.top+t.height/2;}
+      c.style.top=(y-cr.top+10)+'px'; c.classList.add('on');
+    });
+  }
+  addEventListener('resize',place); addEventListener('load',place); setTimeout(place,300); setTimeout(place,1500);
 })();
 </script>
 </body>
