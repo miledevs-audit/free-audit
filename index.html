@@ -1084,6 +1084,18 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 .cdlg .cd-img{aspect-ratio:auto}
 .cdlg .cd-img img{display:block;width:100%;height:auto;aspect-ratio:3/2}
 @media (max-width:899px){.cdlg[open]{display:block}}
+
+/* 08.10 (14): whole case card clickable; phone modal — sticky CTA with a white fade + close button pinned on top; white proof button */
+#cases .cx-card{cursor:pointer}
+.pf-proof{background:#fff;border-color:#fff;color:var(--ink)}
+.pf-proof:hover{background:#E8EFFB;border-color:#E8EFFB}
+.pfdlg .sd-x{top:10px;bottom:auto;right:10px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px -4px rgba(6,10,20,.35)}
+@media (max-width:899px){
+  .cdlg>.sd-x{position:sticky;top:12px;display:grid;margin:12px 12px -56px auto;box-shadow:0 4px 14px -4px rgba(6,10,20,.35)}
+  .cd-foot{position:sticky;bottom:0;z-index:2;background:#fff;padding:12px 20px 18px}
+  .cd-foot::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:64px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 85%);pointer-events:none}
+  .cd-side{padding-bottom:8px}
+}
 </style>
 <script>
 /* Аналітика для реклами: вставте ID — і все запрацює. Lead шлеться після успішної заявки. */
@@ -1841,7 +1853,7 @@ window.MD_GA4_ID='';          /* GA4, напр. 'G-XXXXXXX' */
   tabs.forEach(function(t,i){t.addEventListener('click',function(){tab(i)})}); tab(0);
   if(!d||!d.showModal) return;
   var img=d.querySelector('.cd-img img'), h=d.querySelector('h3'), p=d.querySelector('.cd-in>p'), st=d.querySelector('.cd-st'), ul=d.querySelector('.sd-l'), cta=d.querySelector('.cd-cta');
-  S.addEventListener('click',function(e){var b=e.target.closest('.cx-more'); if(!b) return; var c=C[+b.getAttribute('data-i')];
+  S.addEventListener('click',function(e){var cc=e.target.closest('.cx-card'), b=e.target.closest('.cx-more')||(cc&&cc.querySelector('.cx-more')); if(!b) return; var c=C[+b.getAttribute('data-i')];
     img.src=c.img; img.alt=c.title; h.textContent=c.title; p.textContent=c.desc;var cn=d.querySelector('.cd-niche'),cm=d.querySelector('.cd-meta');if(cn)cn.textContent=c.niche||'';var cq=d.querySelector('.cd-q');if(cq){cq.hidden=!c.quote;cq.querySelector('p').textContent=c.quote?'«'+c.quote+'»':''};if(cm)cm.innerHTML=(c.meta||[]).map(function(m){return '<div><dt>'+m[0]+'</dt><dd>'+m[1]+'</dd></div>'}).join('');
     st.innerHTML=c.stats.map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('');
     ul.innerHTML=''; c.bul.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li)});

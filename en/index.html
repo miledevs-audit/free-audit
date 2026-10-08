@@ -1084,6 +1084,18 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 .cdlg .cd-img{aspect-ratio:auto}
 .cdlg .cd-img img{display:block;width:100%;height:auto;aspect-ratio:3/2}
 @media (max-width:899px){.cdlg[open]{display:block}}
+
+/* 08.10 (14): whole case card clickable; phone modal — sticky CTA with a white fade + close button pinned on top; white proof button */
+#cases .cx-card{cursor:pointer}
+.pf-proof{background:#fff;border-color:#fff;color:var(--ink)}
+.pf-proof:hover{background:#E8EFFB;border-color:#E8EFFB}
+.pfdlg .sd-x{top:10px;bottom:auto;right:10px;background:rgba(255,255,255,.92);box-shadow:0 4px 14px -4px rgba(6,10,20,.35)}
+@media (max-width:899px){
+  .cdlg>.sd-x{position:sticky;top:12px;display:grid;margin:12px 12px -56px auto;box-shadow:0 4px 14px -4px rgba(6,10,20,.35)}
+  .cd-foot{position:sticky;bottom:0;z-index:2;background:#fff;padding:12px 20px 18px}
+  .cd-foot::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:64px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 85%);pointer-events:none}
+  .cd-side{padding-bottom:8px}
+}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
@@ -1100,7 +1112,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-tg" viewBox="0 0 24 24"><path d="M9.04 15.47l-.37 5.2c.53 0 .76-.23 1.04-.5l2.5-2.4 5.18 3.8c.95.52 1.63.25 1.88-.88l3.4-15.95c.31-1.4-.5-1.95-1.43-1.6L1.7 10.4c-1.37.53-1.35 1.3-.23 1.64l5.1 1.6L18.4 6.2c.56-.37 1.07-.16.65.2L9.04 15.47z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.6 20.4l1.25-4.05A8.4 8.4 0 1 1 8.1 19.3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9.1 8.1c.3-.55.85-.55 1.1 0l.7 1.55c.12.28.05.58-.17.8l-.55.55c.6 1.2 1.48 2.08 2.68 2.68l.55-.55c.22-.22.52-.29.8-.17l1.55.7c.55.25.55.8 0 1.1-.85.55-1.9.7-2.9.25a8.6 8.6 0 0 1-4.06-4.06c-.45-1-.3-2.05.25-2.9z" fill="currentColor"/></symbol><symbol id="i-tg" viewBox="0 0 24 24"><path d="M9.04 15.47l-.37 5.2c.53 0 .76-.23 1.04-.5l2.5-2.4 5.18 3.8c.95.52 1.63.25 1.88-.88l3.4-15.95c.31-1.4-.5-1.95-1.43-1.6L1.7 10.4c-1.37.53-1.35 1.3-.23 1.64l5.1 1.6L18.4 6.2c.56-.37 1.07-.16.65.2L9.04 15.47z"/></symbol>
   <symbol id="i-arr" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-chk" viewBox="0 0 16 16"><path d="M3.5 8.4l3 3 6-6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-x" viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
@@ -1135,7 +1147,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <p class="lead"><b>Your ads bring people in. Your store lets them go.</b> We’ll show you where it happens and mock up what it should look like instead.</p>
       <div class="hero-cta" id="heroCta">
         <a class="btn btn-white" href="#order" data-open="Hero">Get my free audit<span class="go" aria-hidden="true"><svg><use href="#i-arr"/></svg></span></a>
-        <a class="btn btn-ghost" href="https://t.me/annserputko" target="_blank" rel="noopener"><svg aria-hidden="true" style="fill:#fff"><use href="#i-tg"/></svg>Message us on Telegram</a>
+        <a class="btn btn-ghost" href="https://wa.me/380980685004" target="_blank" rel="noopener"><svg aria-hidden="true" style="fill:#fff"><use href="#i-wa"/></svg>Message us on WhatsApp</a>
       </div>
       <ul class="ticks">
         <li><svg aria-hidden="true"><use href="#i-chk"/></svg>No Shopify access needed</li>
@@ -1477,7 +1489,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <li><svg aria-hidden="true"><use href="#i-chk"/></svg>No strings attached</li>
     </ul>
     <a class="btn btn-white rv" href="#order" data-open="Final block">Request my audit<span class="go" aria-hidden="true"><svg><use href="#i-arr"/></svg></span></a>
-    <p class="fine rv">Or message us on <a href="https://t.me/annserputko" target="_blank" rel="noopener">Telegram</a></p>
+    <p class="fine rv">Or message us on <a href="https://wa.me/380980685004" target="_blank" rel="noopener">WhatsApp</a></p>
   </div>
 </section>
 
@@ -1514,7 +1526,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
     </div>
     <div class="ft-bot">
       <span>© 2026 MILEDEVS · Shopify Selected Partner</span>
-      <span class="ft-links"><a href="https://t.me/annserputko" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a><a href="mailto:miledevelopment@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2L12 12.4 19.6 7H4.4zM20 8.6l-7.4 5.2a1 1 0 0 1-1.2 0L4 8.6V17h16V8.6z"/></svg>miledevelopment@gmail.com</a></span>
+      <span class="ft-links"><a href="https://wa.me/380980685004" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a><a href="mailto:miledevelopment@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2L12 12.4 19.6 7H4.4zM20 8.6l-7.4 5.2a1 1 0 0 1-1.2 0L4 8.6V17h16V8.6z"/></svg>miledevelopment@gmail.com</a></span>
       <span class="lang"><a href="../" hreflang="uk" lang="uk">UK</a><a class="on" href="./" aria-current="page" lang="en">EN</a></span>
     </div>
   </div>
@@ -1532,8 +1544,8 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       data-e-agree="Please confirm you’ve read the privacy policy."
       data-sending="Sending…"
       data-fail-h="Almost there"
-      data-fail-p="We couldn’t send the form. Tap the button below and your request will open in Telegram, ready to send."
-      data-fail-btn="Send it via Telegram">
+      data-fail-p="We couldn’t send the form. Tap the button below and your request will open in WhatsApp, ready to send."
+      data-fail-btn="Send it via WhatsApp">
       <h2 id="mdlT">Get your free audit</h2>
       <p class="m-sub">Fill this in and we’ll get back to you within an hour during business hours.</p>
       <label class="fld"><span>How much are you ready to invest in growing your store right now? <i>*</i></span>
@@ -1555,13 +1567,13 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
       <label class="agree"><input type="checkbox" name="agree" checked required><span>I’ve read the <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a></span></label>
       <div class="ok" id="okMsg" role="alert"></div>
       <button type="submit" class="btn btn-sub">Send request</button>
-      <p class="fine">Or message us directly on <a href="https://t.me/annserputko" target="_blank" rel="noopener">Telegram</a></p>
+      <p class="fine">Or message us directly on <a href="https://wa.me/380980685004" target="_blank" rel="noopener">WhatsApp</a></p>
     </form>
     <div class="thanks" id="thanks" hidden>
       <div class="tk-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
       <h3>Thanks! We’ve got your request</h3>
       <p>We’ll get back to you within an hour during business hours.</p>
-      <a class="btn" id="tgNow" href="https://t.me/annserputko" target="_blank" rel="noopener">Message us on Telegram now</a>
+      <a class="btn" id="tgNow" href="https://wa.me/380980685004" target="_blank" rel="noopener">Message us on WhatsApp now</a>
     </div>
   </div>
 </div>
@@ -1752,7 +1764,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
     var text=[K.h,K.n+': '+name,(phone?K.p+': '+phone:''),(msg?K.m+': '+msg:''),K.s+': '+store,K.b+': '+budget].filter(Boolean).join('\n');
     var btn=f.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent=D.sending;
     function done(sent){
-      tg.href='https://t.me/annserputko?text='+encodeURIComponent(text);
+      tg.href='https://wa.me/380980685004?text='+encodeURIComponent(text);
       if(!sent){th.querySelector('h3').textContent=D.failH;th.querySelector('p').textContent=D.failP;tg.textContent=D.failBtn;}
       f.hidden=true; th.hidden=false; M.scrollTop=0; tg.focus({preventScroll:true});
       if(sent) track();
@@ -1835,7 +1847,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
   tabs.forEach(function(t,i){t.addEventListener('click',function(){tab(i)})}); tab(0);
   if(!d||!d.showModal) return;
   var img=d.querySelector('.cd-img img'), h=d.querySelector('h3'), p=d.querySelector('.cd-in>p'), st=d.querySelector('.cd-st'), ul=d.querySelector('.sd-l'), cta=d.querySelector('.cd-cta');
-  S.addEventListener('click',function(e){var b=e.target.closest('.cx-more'); if(!b) return; var c=C[+b.getAttribute('data-i')];
+  S.addEventListener('click',function(e){var cc=e.target.closest('.cx-card'), b=e.target.closest('.cx-more')||(cc&&cc.querySelector('.cx-more')); if(!b) return; var c=C[+b.getAttribute('data-i')];
     img.src=c.img; img.alt=c.title; h.textContent=c.title; p.textContent=c.desc;var cn=d.querySelector('.cd-niche'),cm=d.querySelector('.cd-meta');if(cn)cn.textContent=c.niche||'';var cq=d.querySelector('.cd-q');if(cq){cq.hidden=!c.quote;cq.querySelector('p').textContent=c.quote?'«'+c.quote+'»':''};if(cm)cm.innerHTML=(c.meta||[]).map(function(m){return '<div><dt>'+m[0]+'</dt><dd>'+m[1]+'</dd></div>'}).join('');
     st.innerHTML=c.stats.map(function(s){return '<div><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('');
     ul.innerHTML=''; c.bul.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li)});
