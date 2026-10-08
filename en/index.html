@@ -1025,6 +1025,14 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
 /* 08.10 (7): case buttons in the colour of the next (dark) section */
 .cx-more{background:var(--ink);box-shadow:0 16px 30px -16px rgba(6,10,20,.75)}
 .cx-more:hover{background:#1A2233}
+
+
+/* 08.10 (8): one button style — every light-blue button is dark ink, like the case buttons */
+.btn-indigo,.cx-more{background:var(--ink);box-shadow:0 16px 30px -16px rgba(6,10,20,.75)}
+.btn-indigo:hover,.cx-more:hover{background:#1A2233}
+.hdr.light .hdr-cta{background:var(--ink);border-color:var(--ink)}
+.hdr.light .hdr-cta:hover{background:#1A2233;border-color:#1A2233}
+.btn-white .go{background:var(--ink)}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
