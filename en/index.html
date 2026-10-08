@@ -1060,6 +1060,13 @@ html.mdl-open,html.mdl-open body{overflow:hidden}
   .cd-in .cx-niche+h3{font-size:30px}
   .cd-foot{align-self:end;padding:18px 32px 28px}
 }
+
+/* 08.10 (11): phones — cases in one row, swipe sideways */
+@media (max-width:639px){
+  #cases .cx-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;margin:22px -20px 0;padding:4px 20px 22px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  #cases .cx-grid::-webkit-scrollbar{display:none}
+  #cases .cx-card{scroll-snap-align:start}
+}
 </style>
 <script>
 /* Ad analytics: paste the IDs and it just works. Lead fires after a successful request. */
@@ -1806,7 +1813,7 @@ window.MD_GA4_ID='';          /* GA4, e.g. 'G-XXXXXXX' */
 (function(){
   var S=document.getElementById('cases'), j=document.getElementById('cxData'), d=document.getElementById('cxDlg'); if(!S||!j) return;
   var C=JSON.parse(j.textContent), cards=[].slice.call(S.querySelectorAll('.cx-card')), grid=S.querySelector('.cx-grid'), tabs=[].slice.call(S.querySelectorAll('.cx-tabs button'));
-  function tab(k){tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===k?'true':'false')});var n=0;cards.forEach(function(c){var on=+c.getAttribute('data-tab')===k;c.hidden=!on;if(on)n++});grid.classList.toggle('two',n<3)}
+  function tab(k){tabs.forEach(function(t,i){t.setAttribute('aria-selected',i===k?'true':'false')});var n=0;cards.forEach(function(c){var on=+c.getAttribute('data-tab')===k;c.hidden=!on;if(on)n++});grid.classList.toggle('two',n<3);grid.scrollLeft=0}
   tabs.forEach(function(t,i){t.addEventListener('click',function(){tab(i)})}); tab(0);
   if(!d||!d.showModal) return;
   var img=d.querySelector('.cd-img img'), h=d.querySelector('h3'), p=d.querySelector('.cd-in>p'), st=d.querySelector('.cd-st'), ul=d.querySelector('.sd-l'), cta=d.querySelector('.cd-cta');
